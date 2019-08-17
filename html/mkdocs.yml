@@ -1,0 +1,31 @@
+site_name: HeteroDB,inc
+site_description: HeteroDB Corporate Official
+site_author: HeteroDB,inc
+copyright: '&copy; 2017-2019 HeteroDB, all rights reserved'
+@en{
+site_lang: en
+}
+@ja{
+site_lang: ja
+}
+
+theme:
+    name: 'bootstrap4'
+    custom_dir: 'custom'
+
+nav:
+@en{
+- 'Product' : 'index.md'
+- 'Service' : 'service.md'
+- 'About'   : 'about.md'
+- 'Release' : 'release.md'
+}
+@ja{
+- 'Product' : 'index.md'
+- 'Service' : 'service.md'
+- 'About'   : 'about.md'
+- 'Release' : 'release.md'
+}
+extra_css:
+    - 'custom.css'
+markdown_extensions:
