@@ -32,8 +32,8 @@ web_ja: $(BUILD_ROOT)/markdown_i18n
 	done
 	$(BUILD_ROOT)/markdown_i18n -l ja	\
 	  -f $(BUILD_ROOT)/html/mkdocs.yml	\
-	  -o $(BUILD_ROOT)/html/mkdocs.en.yml
+	  -o $(BUILD_ROOT)/html/mkdocs.ja.yml
 	pushd $(BUILD_ROOT)/html;		\
 	env LANG=ja_JP.utf8			\
-	  mkdocs build -c -f mkdocs.en.yml -d ../docs/ja; \
+	  mkdocs build -c -f mkdocs.ja.yml -d ../docs/ja; \
 	popd

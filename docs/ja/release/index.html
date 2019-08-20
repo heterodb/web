@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="HeteroDB,inc">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>お知らせ - HeteroDB,inc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../custom.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/base.js"></script> 
+    </head>
+
+    <body class=""
+          style="background-image: url(../img/background_photo.jpg);
+                 background-repeat: no-repeat;
+                 background-size: 100%">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="..">
+          <img src="../img/heterodb_logo_s.png" style="margin-right: 120px">
+        </a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+          <!-- Main navigation -->
+          <ul class="nav navbar-nav">
+            <li >
+              <a class="nav-link" href="..">製品</a>
+            </li>
+            <li >
+              <a class="nav-link" href="../service/">サービス</a>
+            </li>
+            <li >
+              <a class="nav-link" href="../about/">会社情報</a>
+            </li>
+            <li class="active">
+              <a class="nav-link" href="./">お知らせ</a>
+            </li>
+            <li><a class="nav-link" href="http://heterodb.github.io/pg-strom/ja/">ドキュメント</a>
+              </li>
+          </ul>
+	</div>
+	<div class="collapse navbar-collapse justify-content-end">
+        <ul class="nav navbar-nav"><li><a class="nav-link" href="../.."><img src="../img/lang_en_off.png"></a></li>
+          <li><a class="nav-link" href="../"><img src="../img/lang_ja.png"></a></li>
+          </li>
+        </ul>
+        </div>
+	</div>
+      </nav><div id="content" class="container">
+        
+      <div class="row"><div class="col-md-1"></div>
+        <div class="col-md-10 rounded bg-white p-3" role="main">
+        
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item active" aria-current="page">お知らせ</li>
+  </ol>
+</nav>
+
+
+<h1 class="headline" id="20180418">
+ヘテロDB、GPUを用いたデータベース高速化技術PG-Stromの販売を開始
+</h1>
+
+<p class="headline">
+2018年04月18日(水)
+</p>
+
+<p>2018年4月18日、ヘテロDB株式会社（東京都品川区、代表取締役社長：海外浩平）は、GPUを用いたデータベース高速化技術であるPG-Stromのサブスクリプション製品、および同ソフトウェアを搭載したアプライアンス製品の販売を開始いたします。</p>
+<h2 id="1u2udwh-pg-strom-20">ハードウェアの能力を限界まで引き出し、1U/2UラックサーバでDWH水準の処理能力を実現する PG-Strom バージョン 2.0</h2>
+<p>PG-Stromとは、最も広く使われているオープンソースのリレーショナルデータベースであるPostgreSQL向けに設計された拡張モジュールで、SQLコマンドから自動生成したGPUプログラムをGPUの持つ数千コアと広帯域メモリを用いて並列実行する事で、大量データの集計・解析処理を高速化します。</p>
+<p><img alt="SSD-to-GPU Direct SQL" src="../img/press_20180418a.png" /></p>
+<p>中核機能の一つSSD-to-GPUダイレクトSQL実行は、NVMe-SSD上のPostgreSQLデータブロックの内容をGPUへ直接ロードし、データがホストシステムに到着するよりも先にGPUでSQLワークロードを実行します。これによりCPUが処理すべきデータ量を数百分の一以下に削減し、I/O中心のワークロードである集計処理や全件探索といったワークロードを効率的に実行する事が可能となります。</p>
+<p><img alt="Extension of PostgreSQL" src="../img/press_20180418c.png" /></p>
+<p>PG-StromはPostgreSQLが公式にサポートする内部APIのみを用いて実装されており、SQL構文やデータ形式なども含め、ユーザやアプリケーションからは標準的なPostgreSQLであるかのように利用できます。クエリの特性を踏まえてオプティマイザがGPUを利用するかどうかを判断するため特別なチューニングや設定は不要であり、またトランザクショナルなデータ形式（行データ）に対しても高速化を行うため、業務系システムと情報系システム間でデータ形式を変更する必要はありません。</p>
+<p>シングルノードのPostgreSQLという最も単純な構成に必要かつ十分な処理能力を増強する事で、アプリケーションはよりシンプルな設計が可能となり、また定常的なDB管理作業の省力化にも繋がります。</p>
+<h2 id="pg-strom">PG-Stromの実行に最適なアプライアンスモデル</h2>
+<p>PG-Stromの提供する各種のアクセラレーション機能のプラットフォームとして、最適なハードウェアを選定して予め動作検証を行い、必要なソフトウェアが全てセットアップ済みとなっているアプライアンス製品を同時にリリースします。</p>
+<p><img alt="Appliance Model" src="../img/press_20180418d.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>HeteroServer GS120-P40</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Intel Xeon Gold 6126T (12C, 2.6GHz) x1</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>DDR4-2666 32GB x 6 (total 192GB)</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>NVIDIA TESLA P40 (3840C, 24GB)</td>
+</tr>
+<tr>
+<td>SSD</td>
+<td>Intel SSD DC P4600 (2.0TB; HHHL)</td>
+</tr>
+<tr>
+<td>HDD</td>
+<td>2.0TB (SATA; 7.2krpm) x6</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>10Gb Ethernet x2 ports</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pg-strom_1">PG-Stromの主な用途</h3>
+<ul>
+<li>データウェアハウス・データマート</li>
+<li>バッチ・レポーティング処理</li>
+<li>ログデータ解析基盤</li>
+<li>異常検知システム基盤</li>
+<li>統計解析・機械学習基盤</li>
+</ul>
+<h3 id="pg-strom_2">PG-Stromの特長・主要機能</h3>
+<ul>
+<li>PostgreSQLの一部として動作しクエリおよびデータの完全な互換性を実現</li>
+<li>SQLからGPUプログラムを自動生成し、SQLを透過的に高速化</li>
+<li>SSD-to-GPUダイレクトSQL実行</li>
+<li>インメモリ列指向キャッシュ</li>
+<li>GPUメモリストア(gstore_fdw)</li>
+<li>PL/CUDAユーザ定義関数</li>
+</ul>
+<h3 id="_1">製品一覧</h3>
+<ul>
+<li><strong>サブスクリプション製品</strong><ul>
+<li>PG-Strom Enterprise Subscription (1GPU, 1年)</li>
+<li>PG-Strom Enterprise Subscription (1GPU, 3年)</li>
+</ul>
+</li>
+<li>
+<p><strong>アプライアンス製品</strong></p>
+<ul>
+<li>HeteroServer GS120-P40</li>
+</ul>
+</li>
+<li>
+<p>サブスクリプション製品は、<a href="https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List">認定済みハードウェア／ソフトウェア構成</a>での利用が前提となります。</p>
+</li>
+<li>価格は全てオープンプライスとなります</li>
+</ul>
+<p>以上</p>
+<hr />
+<!-- 日本語のみ -->
+
+<p>あらゆる産業のIT基盤であるデータベースにGPUを活用し、処理の高速化を実現したPG-Stromは、GPUの新たな活用領域を切り開いたと言えるでしょう。PG-Stromアプライアンス製品の販売開始によって、データベース上での超高速計算・解析が簡単に活用できるようになることを期待しています。</p>
+<p>エヌビディア 日本代表 兼 米国本社副社長　　大崎真孝様</p>
+<hr />
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+<hr />
+<h1 class="headline" id="20171213">
+GTCジャパン Inception Startup AIサミットにおいて、弊社が最優秀賞を受賞いたしました。
+</h1>
+
+<p class="headline">
+2017年12月13日(水)
+</p>
+
+<p>2017年12月12日(火)～13日(水)にかけて開催されましたGPU Technology Conference Japan 2017（以下、GTCジャパン）において、『INCEPTION AI スタートアップ サミット』と題して、国内の機械学習・データサイエンス領域のスタートアップ19社によるコンテストが開催され、弊社が最優秀賞を受賞いたしました。</p>
+<p>また、同じくGTCジャパン内のポスターセッションにおいて、弊社代表取締役・海外浩平による『PL/CUDA – In-database massive parallel analytics』と題したポスター発表が、ファイナリスト５名の中から来場者の投票により、最優秀賞を受賞いたしました。</p>
+<p>日本で最も大規模なGPU技術カンファレンスであるGTCJapanにおいて、弊社が長年取り組んできた、GPUによる大規模データ処理の高速化、およびIn-database analyticsという新たなデータベースの適用領域に関する技術が揃って最優秀賞を受賞するというのは、大変に光栄な事であると考えております。</p>
+<p>ユーザ様はじめ関係者の皆様のご期待に応えるべく、今後ともHeteroDB社は技術開発・製品開発に取り組んでまいります。</p>
+<ul>
+<li><a href="https://www.nikkei.com/article/DGXMZO24542480S7A211C1XY0000/">最優秀はヘテロDB　米エヌビディアがAIイベント</a></li>
+<li><a href="blob/20171212_GTCJapan_HeteroDB">当日発表資料：HeteroDB,Inc ～ハードウェアの限界に挑むデータベース屋さん～</a></li>
+</ul>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+<hr />
+<h1 class="headline" id="20170929">
+HeteroDBがNVIDIA「Inception Program」に加入しました
+</h1>
+
+<p class="headline">
+2017年9月29日(金)
+</p>
+
+<p>GPUを用いたデータベース高速処理技術の開発・販売を手がけるHeteroDB株式会社（東京都品川区 代表取締役社長 海外浩平、以下「HeteroDB」）は、このたび、NVIDIA Corporation（カリフォルニア州サンタクララ 社長兼CEO ジェンスン・フアン、以下「NVIDIA」）がAI・データサイエンス領域のスタートアップを支援するプログラムである「Inception Program」のパートナー企業として認定されました。</p>
+<p>NVIDIA Inception Programへの参加により、当社はNVIDIAより最新GPUテクノロジーを含む技術支援を受け、共同でのマーケティング活動を行う事が可能となります。</p>
+<p>HeteroDBの中核技術であるPG-Stromは、GPUによるPostgreSQLのクエリ処理ワークロードの高速化と、in-databaseのデータ解析&amp;機械学習機能を提供するものです。本プログラムの活用を通して、HeteroDBは最新世代のGPUに最適化された高速データベース製品の研究開発を強化します。 また同時に、ヘテロジニアスコンピューティングという次世代の計算機アーキテクチャの力を、データベースという最も広範に人と社会の活動を支えているソフトウェアを通して、世界中のユーザが気軽に手の届くものになるよう、製品・ソリューションの開発に取り組みます。</p>
+<p>NVIDIA Inception Program は、人工知能(AI)やデータサイエンスの進歩に伴い業界に革命を起こそうとしているスタートアップ企業を養成することを目的としています。Inception Programは仮想インキュベーター プログラムとして設計されており、製品開発、プロトタイピング、および導入の段階でクリティカルな状態にいるメンバーを支援します。これには、ハードウェア付与やマーケティングサポートからディープラーニングエキスパートとのトレーニングに至るまで現行のメリットのカスタムセットが含まれています。
+（<a href="http://www.nvidia.co.jp/object/inception-program-jp.html">http://www.nvidia.co.jp/object/inception-program-jp.html</a>）</p>
+<h2 id="heterodb">HeteroDB社について**</h2>
+<p>HeteroDB社は、GPUやNVMe-SSDなど新世代のハードウェアの能力を最大限に引き出し、データベース処理の高速化とシステム運用のシンプル化を低コストで実現するHeteroServer[*1]の開発と販売、および関連ソリューションの提供を目的として設立されたスタートアップです。 GPUとデータベースという異なる技術領域に精通したプロフェッショナル集団であり、お客様の課題に対する深い洞察から最適な解決方法をご提案します。また、イノベーションの成果を広くオープンソースコミュニティへと還元し、エコシステムの発展に寄与することを目指しています。</p>
+<p>[*1] HeteroServer: PostgreSQLデータベースを中核に、GPU/SSDなど最新のハードウェアと、その能力を最大限に引き出すための拡張モジュールであるPG-Stromを搭載したデータベースアプライアンス製品。2018年3月のリリースを予定。</p>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+<hr />
+<h1 class="headline" id="20170728">
+IPA未踏アドバンスト事業において、弊社従業員の提案が採択されました。
+</h1>
+
+<p class="headline">
+2017年7月28日(金)
+</p>
+
+<p>本日、独立行政法人情報処理推進機構（IPA）は、弊社チーフアーキテクト 海外浩平、同チーフセールスエンジニア 柏木 岳彦、同アルバイト 遠藤克浩の３名の共同提案による『ヘテロジニアスなIn-Databaseデータ解析・機械学習基盤』を含む6件を、第1回 IPA未踏アドバンスト事業の採択案件として発表いたしました。</p>
+<h2 id="ipa">IPA 未踏アドバンスト事業について</h2>
+<p>「未踏アドバンスト事業」は、市場性、開発実現性、事業性を兼ね備えたITを活用した革新的なアイデア・プロトタイプ（製品・サービスの企画・構想を練っている段階、製品・サービスのプロトタイプ開発を継続している段階）を有し、起業または事業化に強い関心を持つ未踏的IT人材に対し、プロジェクトマネージャー等による指導・助言、活動に必要となる資金支援を行う事業です。
+（<a href="https://www.ipa.go.jp/jinzai/advanced/index.html">IPAウェブサイト</a>より引用）</p>
+<h2 id="_2">プロジェクトの概要</h2>
+<p>本プロジェクトでは、GPUの並列計算能力を活用して解析系SQLの高速化を実現するPostgreSQL向け拡張モジュール（PG-Strom）に、次の機能を実装する。①SSD-to-GPUダイレクトSQL実行機能 （GPU/SSD密結合によるI/O高速化）、②PL/CUDA統計解析・機械学習ライブラリ（In-databaseデータ解析処理）、③行形式⇒列形式の変換に対応したストレージ機構 （ワークロード最適化SSD/キャッシュ）。これら①～③の機能を用いて、GPUやSSDといったコモディティだが強力な処理能力を有するハードウェアと、その能力を最大限に引き出すソフトウェアの組み合わせにより、リレーショナル・データベースという情報システムの中で最もデータが集積するコンポーネントをデータ解析・機械学習の基盤として再定義する。</p>
+<p>プロジェクトメンバーの設立する新会社は、前述の技術を搭載した垂直統合型高速DBシステム（仮称：HeteroServer）を製品化し、次の３セグメントをターゲットとしてこれら市場の開拓にあたる。①高性能・低価格を武器とした情報系システムの商用DBからの移行　②高速なI/Oを武器としたネットワーク事業者のログ解析　③In-database処理を武器とした金融・信販事業者のアノマリー検知。
+新会社は、本垂直統合型高速DBシステムの販売（製品事業）、および、本技術を利用したデータ利活用コンサルティング（サービス事業）の２つを軸とした事業を行う。</p>
+<h2 id="_3">プロジェクトメンバー</h2>
+<ul>
+<li>海外 浩平（ヘテロDB株式会社　チーフアーキテクト 兼 代表取締役社長）</li>
+<li>柏木 岳彦（ヘテロDB株式会社　チーフセールスエンジニア 兼 取締役副社長）</li>
+<li>遠藤 克浩（慶應義塾大学　理工学部）</li>
+</ul>
+<h2 id="_4">今後の見通し</h2>
+<p>今後、未踏アドバンストプロジェクト期間である2017年8月から2018年2月にかけて、IPAおよびプロジェクトマネージャ衛藤バタラ氏の支援、助言の下で、HeteroServer製品の中核技術であるPG-StromやPL/CUDA機械学習ライブラリの開発、およびアーリーアダプタユーザの開拓に取り組んでまいります。</p>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+<hr />
+<h1 class="headline" id="20170704">
+ヘテロDB株式会社を設立しました
+<h2>
+〜 ヘテロジニアスコンピューティング技術のデータベース領域への適用に向けて〜
+</h2>
+</h1>
+
+<p class="headline">
+2017年7月4日(火)
+</p>
+
+<p>本日、PG-Strom Development Teamのコアメンバである海外浩平、および柏木岳彦は、GPUやSSD、FPGAなどヘテロジニアス・コンピューティング技術を活用し、高性能と低価格、運用しやすさを両立するデータベース製品、ソリューション、および関連サービスを提供する新会社、ヘテロDB株式会社を設立した事をお知らせします。</p>
+<h2 id="_5">新会社のミッション</h2>
+<p>私たちは今、何十年に一度の計算機アーキテクチャの変革期という、非常に面白い時代に生きています。 ムーアの法則が終焉に近づき、プロセッサはマルチコアからメニーコアへと進化し、さらにはGPUやFPGAといった設計思想の異なる半導体デバイスを併用しなければ性能向上が見込めない世界がすぐそこまで来ています。 これらのヘテロジニアスな計算機アーキテクチャにおいては、ソフトウェアはハードウェアの進化に"ただ乗り"する事はできません。ハードウェアの能力を引き出すために、最適なソフトウェアを再設計する必要があるのです。</p>
+<p>私たちは、5年あまり前からGPUの並列計算能力を用いてPostgreSQLのワークロードを高速化するオープンソースの拡張モジュール「PG-Strom」の開発に取り組んできました。 ソフトウェア開発者として純粋にこの技術領域が面白いという他に、データベース管理システムという最も広範に人と社会を支えているソフトウェアの改良を通じて、さらにはオープンソースソフトウェアのエコシステムを通じて、ヘテロジニアスコンピューティングという次世代の計算機アーキテクチャの力を、世界中のユーザが気軽に手の届くものにするという使命感に支えられてのものです。</p>
+<p>本日創業したヘテロDB株式会社は、次の３つのミッションの実現を目的としています。</p>
+<ul>
+<li>PG-Stromをはじめとする、ヘテロジニアスコンピューティング技術を組込んだデータベース製品を実現し、速さ、安さ、使いやすさを両立するデータ処理基盤を提供すること。</li>
+<li>GPUとデータベースという異なる技術領域に精通したプロフェッショナルであり、お客様の課題に対する深い洞察から最適な解決方法を導き出す事。</li>
+<li>企業や国、技術領域の壁を越え、広くイノベーションの成果をオープンソースコミュニティに還元し、エコシステムの発展に寄与すること。</li>
+</ul>
+<p>そして何より、エンジニアがわくわくするようなテクノロジーを形にし、ユーザ様ひいては社会の課題を今の時代にふさわしい形で解く事で、社会をより良くする事に貢献する企業でありたいと考えています。</p>
+<p><strong>新会社の概要</strong></p>
+<ul>
+<li>商号: ヘテロDB株式会社</li>
+<li>設立: 2017年7月4日</li>
+<li>代表者: 海外　浩平</li>
+<li>所在地: 東京都品川区西大井一丁目１番地の２</li>
+<li>資本金: 999万円</li>
+<li>出資比率: 海外浩平 89.2%、柏木岳彦 10.8%</li>
+<li>URL： <a href="http://heterodb.com/">http://heterodb.com/</a></li>
+</ul>
+<p><strong>今後の見通し</strong></p>
+<p>新会社は、PG-Stromを中核とするソフトウェアの開発、およびアーリーアダプタ利用者様との共同検証、機能・品質改善を経て、2018年3月の製品販売開始を予定しております。</p>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+<hr />
+<h1 class="headline" id="20170508">
+弊社社員の研究発表がGTC2017のTop-5ポスターに選定されました
+</h1>
+
+<p class="headline">
+2017年5月8日(月)
+</p>
+
+<p><img alt="GTC2017 Top-5 Posters" src="../img/press_20170508a.jpg" /></p>
+<p>米NVIDIA社が主催する世界最大のGPU技術カンファレンスである GPU Technology Conference 2017（5月8日(月)～5月11日(木)、米国サンノゼ市）において、弊社チーフアーキテクトの海外による『An Intelligent Storage for PostgreSQL Database』と題したポスター発表が、約140件の研究開発ポスター発表の中からTop-5 Finalistに選定されました。</p>
+<p>本発表は、HeteroServer製品の中核技術の一つであるSSD-to-GPUダイレクトSQL実行機能のコンセプト、技術概要、ベンチマーク結果を紹介したものです。 その中では、TeslaシリーズGPUの機能であるGPUDirect RDMAをNVMe-SSDからのデータ読出しに応用し、不要データのふるい落としやJOIN/GROUP BYなど問い合わせ処理をGPUで並列実行してデータ量を削減する事で、従来は専ら計算集約的な問題のアクセラレータとして使用されてきたGPUを、I/O集約的な問題に対しても有効に機能することを示しています。</p>
+<ul>
+<li><a href="http://www.gputechconf.com/resources/poster-gallery/2017/accelerated-analytics">GTC 2017 Posters - ACCELERATED ANALYTICS</a></li>
+<li><a href="../blob/P7130_KAIGAI_SSD2GPU.pdf">P7130 - An Intelligent Storage for PostgreSQL Database[PDF]</a></li>
+</ul>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6429-9607 </li>
+<li>住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</li>
+</ul>
+</blockquote>
+
+<!--
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+-->
+        </div>
+        <div class="col-md-1"></div></div>
+      </div><footer class="col-md-12">
+	<hr>
+	<div class="container">
+	  <p>&copy; 2017-2019 HeteroDB, all rights reserved</p>
+	</div>
+      </footer>
+      <script>
+	var base_url = "..",
+            shortcuts = {"previous": 80, "next": 78, "help": 191, "search": 83};
+      </script>
+      <script src="../js/base.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+      
+    </body>
+</html>

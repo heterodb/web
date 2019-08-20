@@ -1,14 +1,15 @@
 <hr>
 <p class="text-center">
+
 <strong style="font-size: 120%">
 {%- if config.site_lang == 'ja' -%}
-ONAME
+お問い合わせ
 {%- else -%}
 Send us a message
 {%- endif -%}
 </strong>
 </p>
-<div div class="rounded border p-3">
+<div div class="rounded border p-3 bg-white">
 <form action="https://formspree.io/contact@heterodb.com"
       method="POST"
       name="sentMessage" id="contactForm">
@@ -16,9 +17,9 @@ Send us a message
     <div class="controls">
       <label>
       {%- if config.site_lang == 'ja' -%}
-      ONAME
+      お名前
       {%- else -%}
-        Full name
+      Full name
       {%- endif -%}
       </label>
       <input type="text" class="form-control" name="name" required
@@ -29,9 +30,9 @@ Send us a message
     <div class="controls">
       <label>
       {%- if config.site_lang == 'ja' -%}
-      ONAME
+      会社名
       {%- else -%}
-        Company
+      Company
       {%- endif -%}
       </label>
       <input type="text" class="form-control" name="company" required
@@ -42,9 +43,9 @@ Send us a message
     <div class="controls">
       <label>
       {%- if config.site_lang == 'ja' -%}
-      ONAME
+      メールアドレス
       {%- else -%}
-        Email address
+      Email address
       {%- endif -%}
       </label>
       <input type="email" class="form-control" name="email" required
@@ -55,9 +56,9 @@ Send us a message
     <div class="controls">
     <label>
       {%- if config.site_lang == 'ja' -%}
-      ONAME
+      本文
       {%- else -%}
-        Message
+      Message
       {%- endif -%}
     </label>
     <textarea rows="10" cols="100" class="form-control" name="message" required

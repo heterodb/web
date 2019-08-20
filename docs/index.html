@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="HeteroDB Corporate Official">
+        <meta name="author" content="HeteroDB,inc">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>HeteroDB,inc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="custom.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="js/base.js"></script> 
+    </head>
+
+    <body class="homepage "
+          style="background-image: url(./img/background_photo.jpg);
+                 background-repeat: no-repeat;
+                 background-size: 100%">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href=".">
+          <img src="./img/heterodb_logo_s.png" style="margin-right: 120px">
+        </a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+          <!-- Main navigation -->
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a class="nav-link" href=".">Product</a>
+            </li>
+            <li >
+              <a class="nav-link" href="service/">Service</a>
+            </li>
+            <li >
+              <a class="nav-link" href="about/">About</a>
+            </li>
+            <li >
+              <a class="nav-link" href="release/">Release</a>
+            </li>
+            <li>
+              <a class="nav-link" href="http://heterodb.github.io/pg-strom/">Document</a></li>
+          </ul>
+	</div>
+	<div class="collapse navbar-collapse justify-content-end">
+        <ul class="nav navbar-nav">
+          <li><a class="nav-link" href="."><img src="./img/lang_en.png"></a></li>
+          <li><a class="nav-link" href="./ja"><img src="./img/lang_ja_off.png"></a></li></ul>
+        </div>
+	</div>
+      </nav><div id="content" class="container">
+        
+      <div class="row"><div class="col-md-1"></div>
+        <div class="col-md-10 rounded bg-white p-3" role="main">
+        
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item active" aria-current="page">Product</li>
+  </ol>
+</nav>
+
+
+<h1 class="section">
+A unified data platform for log-data processing, analytics and machine-learning
+</h1>
+
+<p><img alt="PG-Strom usage" src="img/product_01e.png" /></p>
+<p>PG-Strom is an extension of PostgreSQL that is one of the most widely used DB systems. This software is designed for acceleration of terabytes and billions-rows scale data processing, summarizing and analytics, by utilization of maximum capability of GPU and NVME-SSD.</p>
+<p>Features of PG-Strom especially focus on log-data processing of large scale accumulated data like IoT/M2M area. It allows a series of data management cycle on a simple standalone database server configuration; data import, summarizing, transformation, cooperation with machine-learning application like anomaly detection, and so on.</p>
+<p>In addition to easy-to-understand effects such as system cost reduction and time reduction of massive data migration, all the operations works on PostgreSQL system that is familiar for many engineers, we can utilize existing skill and knowledge of database administration and also improve software quality of applications.</p>
+<h1 id="pg-strom-core-technologies">PG-Strom core technologies</h1>
+<h2 id="transparent-massive-parallel-sql-execution-by-gpu">Transparent massive-parallel SQL execution by GPU</h2>
+<p><img alt="SSD-to-GPU Direct SQL" src="img/tech_10.png" /></p>
+<p><strong>GPU Characteristics</strong></p>
+<p>A GPU device has thousands processor cores and high performance memory bus arounds hundreds GB/s bandwidth. These hardware resources work very efficiently on parallel computing, thus GPU can offer much higher price-performance ratio than CPU.
+Matrix operations are a typical parallel computing workload where GPU has advantage, because of identical calculations on massive amount of uniformed data set. SQL also has similar workloads, like evaluation of WHERE-clause for each record on full table scan, for example.</p>
+<p><strong>PG-Strom Overview</strong>
+PG-Strom is an extension for PostgreSQL, designed for acceleration of summarizing and analytic SQL workloads using parallel computing capability of GPUs.
+It supports on-GPU execution of WHERE, JOIN and GROUP BY which are CPU intensive workloads. Once PostgreSQL query optimizer chooses on-GPU execution, PG-Strom generates GPU binary code from the SQL by JIT (just-in-time) compile, then asynchronously runs on GPU in massive parallel.</p>
+<p><strong>Why PG-Strom can cooperate with PostgreSQL seamlessly?</strong></p>
+<ul>
+<li>No query changes<ul>
+<li>PG-Strom checks an internal data structure that is already parsed from SQL statement, to determine whether it is a reasonable workload for GPU execution. So, it automatically picks up "heavy workloads" and no manual controls are needed.</li>
+</ul>
+</li>
+<li>No data migration<ul>
+<li>PG-Strom utilizes the data structure and storage format of PostgreSQL as is, so no need to migrate your data to special tables, or transform the data format.</li>
+</ul>
+</li>
+<li>No patches<ul>
+<li>PG-Strom is all implemented on top of the internal hooks supported by PostgreSQL, so we can install the software without any special patches or custom enhancement.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ssd-to-gpu-direct-sql-for-maximum-storage-throughput">SSD-to-GPU Direct SQL for maximum storage throughput</h2>
+<p>SSD-to-GPU Direct SQL, is a unique technology of HeteroDB, builds a direct data path between fast storage and parallel processors, to execute SQL workloads at a speed close to the physical limit of NVME-SSD. GPU is usually considered as a "computing accelerator", but I/O intensive workloads are also accelerated.</p>
+<p><img alt="SSD-to-GPU Direct SQL" src="img/tech_11e.png" /></p>
+<p><strong>Concept</strong></p>
+<p>Before PostgreSQL data blocks on storage are loaded and transferred to CPU/RAM, in most case, we can reduce amount of the data by direct transfer of these data block onto GPU first, and processing the SQL workloads here. If GPU can handle aggregation operations with GROUP BY, it is not rare that data size becomes 1/1000 or less.
+It reduces the amount of I/O to be transferred to CPU/RAM in the results, so GPU enables to accelerate I/O intensive workloads.</p>
+<p>From the viewpoint of CPU, the collaboration of NVMe-SSD and GPU looks an intelligent storage device which can understand SQL workloads, for elimination of definitely unnecessary rows or for pre-process to the post stage.</p>
+<p><strong>Technology Basis - GPUDirect RDMA</strong></p>
+<p>NVIDIA GPUDirect RDMA is technology basis of this mechanism. It enables to map a particular region of GPU device memory on physical address space pf host systems. Once GPU device memory is mapped on, we can use this address as source or destination of DMA data transfer. CPU/RAM does not intermediate this data transfer, exchanged over PCIe bus using peer-to-peer transfer between PCIe devices.</p>
+<p>GPUDirect RDMA is originally designed for  MPI over Infiniband, on the other hands, we can apply this feature on other type of PCIe devices as long as custom Linux kernel module intermediates DMA transfer properly.
+We utilized this infrastructure for the close cooperation between NVME-SSD and GPU.</p>
+<p><strong>Why GPU can accelerate I/O workloads?</strong></p>
+<ul>
+<li>Direct Data Transfer<ul>
+<li>The filesystem based I/O, used by PostgreSQL, takes multiple buffer copies on storage block read. It also consumes CPU cycles according to the data size.</li>
+<li>In case of SSD-to-GPU direct SQL, data blocks loaded from SSD are put on GPU device directly and asynchronously. It releases CPU/GPU from the workload of data copy, and allows them to focus on SQL workloads processing; only CPU/GPU can do.</li>
+</ul>
+</li>
+<li>Reduction of data size<ul>
+<li>PG-Strom originally processes WHERE, JOIN and GROUP BY on GPU device for PostgreSQL data (row data format). These SQL operations perform to reduce number of rows in most cases.</li>
+<li>Thus, pre-processing data blocks of PostgreSQL read from SSD by GPU enables to reduce amount of I/O to be loaded onto CPU/RAM eventually. Even though we load data blocks from NVME-SSD very fast close to the physical limitation, CPU needs to process very small number of rows.</li>
+</ul>
+</li>
+</ul>
+<h2 id="columnar-data-store-of-apache-arrow">Columnar data store of Apache Arrow</h2>
+<p>PG-Strom supports direct read of Apache Arrow format that is used by many of data analytics applications, so it eliminates the data importing steps to DB system, and pulls out higher effective SQL processing performance more than physical limit of storage, with efficient I/O by columnar data structure.</p>
+<p><img alt="SSD-to-GPU Direct SQL" src="img/tech_12.png" /></p>
+<p>Apache Arrow is one of the columnar data format, and also a data exchange format used by many data analytics applications. So, libraries to handle Arrow format are provided for major languages like C/C++, Python and so on.</p>
+<p><strong>Why data import is not necessary?</strong></p>
+<p>PG-Strom allows to read Arrow files as like PostgreSQL tables using foreign-table interface, and also support SQL processing on GPU.</p>
+<p>Usually, it takes tons of time to import external data-set to the database system, prior to summarizing and analyzing. On the other hands, Arrow_Fdw of PG-Strom just maps Arrow files on foreign tables, so a simple file copy completes data import.</p>
+<p><strong> Why efficient I/O</strong></p>
+<p>It is not usual to reference all the columns defined at a table in the analytic workloads. Usually, it is enough to reference a part of columns, on the other words, unreferenced columns are "junk data" that consumes I/O bandwidth with no sense.</p>
+<p>It is hard to extract only referenced columns from row-data like PostgreSQL. In case of columnar data, we can easily control the device to read only referenced columns contrastingly, because data elements are closely disposed per column.</p>
+<h2 id="scalable-storage-by-nvme-of-support">Scalable storage by NVME-oF support</h2>
+<p>It is not an easy task to estimate the required storage capacity exactly on system installation time for the systems that collect and accumulate log-data increasing day-by-day, like IoT/M2M area.</p>
+<p>If PCIe-based NVME-SSDs are installed on the server, the maximum storage capacity is restricted by the server chassis size. On the other hands, NVME-over-Fabric technology, that uses remote NVME-SSDs over extreme fast networks, allows to extend capacity of the storage on demand, regardless of the server chassis size.</p>
+<p>SSD-to-GPU Direct SQL technology of PG-Strom supports NVME-oF, and allows to load data blocks from remote NVME-SSD to local GPU directly by RDMA (Remote Direct Memory Aceess) over the network cards.</p>
+<p><img alt="SSD-to-GPU Direct SQL" src="img/tech_13e.png" /></p>
+<h1 id="proposition-of-use-scenarios">Proposition of use scenarios</h1>
+<h2 id="log-data-search-processing-for-security">Log-data search &amp; processing - for security</h2>
+<p><img alt="Log data search" src="img/concept_01.png" /></p>
+<p>In case of security incidents, log-data of IT systems or network facilities provide us a hint to find out the causation and scope of the impact.
+However, it is not realistic scenario to apply an generic DB tuning methodology like indexing or partitioning preliminary towards unknown attack patterns, on the other hands, cause investigation and reporting are rapidly required.</p>
+<p>PG-Strom enables fast log-search and try-&amp;-error of hypothesis by utilization of GPU's computing power and NVME-SSD's wide bandwidth. For engineers in the field, they can use SQL statements and operators of PostgreSQL which are familiar with.</p>
+<h2 id="business-intelligence-reporting">Business Intelligence &amp; Reporting</h2>
+<p><img alt="Business Intelligence" src="img/concept_02.png" /></p>
+<p>Typical summarizing SQL workloads, often used for business intelligence (BI) or reporting, are suitable for parallel execution by massive CPU/GPU cores and require storage system high I/O throughput. PG-Strom is optimized to this kind of workloads, thus enables rapid summarizing with all the hardware resources like CPU, GPU and SSD.</p>
+<p>Therefore, it allows to replace legacy systems, expensive DWH appliance or cluster based systems people often adopted in the past, by simple PostgreSQL-based solution.</p>
+<h2 id="anomaly-detection">Anomaly Detection</h2>
+<p><img alt="Anomaly Detection" src="img/concept_03.png" /></p>
+<p>We need to find out “anomaly” as frequent as possible, to detect criminal transaction, like credit-card skimming or bank transfer scam, from the daily transactional records.</p>
+<p>PG-Strom supports to run anomaly detection logic based on statistical analysis algorithms directly on the transactional records stores in the database. GPU can process this logic very fast, and no need to export the database for checking because of in-database processing.</p>
+<h1 id="product-specification">Product Specification</h1>
+<ul>
+<li>ハードウェア構成は<a href="https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List#hardware-validation-list">HW-Validation-List</a>をご確認ください。</li>
+<li>OS: Red Hat Enterprise Linux </li>
+</ul>
+<h2 id="software-subscription">Software Subscription</h2>
+<blockquote>
+<p><strong>PG-Strom Enterprise Subscription (1GPU, 1year)</strong></p>
+<ul>
+<li>This subscription is required for each GPU device used by PG-Strom<ul>
+<li>Note that it is not number of GPU devices installed on the target system.</li>
+</ul>
+</li>
+<li>This subscription includes below:<ul>
+<li>License key for the proprietary modules</li>
+<li>Technical support of the target system</li>
+<li>Online updates of the software</li>
+</ul>
+</li>
+<li>Check <a href="https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List#hardware-validation-list">HW-Validation-List</a> for supported hardware configuration.</li>
+<li>This subscription has an open price. Please contact us from the contact form at bottom of the page.</li>
+</ul>
+</blockquote>
+<!-- 以下にパートナー一覧。OKもらってから -->
+
+<!--
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+-->
+        </div>
+        <div class="col-md-1"></div></div>
+      </div><div class ="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <hr>
+<p class="text-center">
+
+<strong style="font-size: 120%">Send us a message</strong>
+</p>
+<div div class="rounded border p-3 bg-white">
+<form action="https://formspree.io/contact@heterodb.com"
+      method="POST"
+      name="sentMessage" id="contactForm">
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>Full name</label>
+      <input type="text" class="form-control" name="name" required
+             data-validation-required-message="Please enter your name.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>Company</label>
+      <input type="text" class="form-control" name="company" required
+             data-validation-required-message="Please enter your name.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>Email address</label>
+      <input type="email" class="form-control" name="email" required
+             data-validation-required-message="Please enter your email address.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+    <label>Message</label>
+    <textarea rows="10" cols="100" class="form-control" name="message" required
+              data-validation-required-message="Please enter your message"
+              maxlength="999" style="resize:none"></textarea>
+    </div>
+  </div>
+  <div id="success"></div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-fw fa-envelope-o"></i> Send Message
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+        </div>
+        <div class="col-md-2"></div>
+      </div><footer class="col-md-12">
+	<hr>
+	<div class="container">
+	  <p>&copy; 2017-2019 HeteroDB, all rights reserved</p>
+	</div>
+      </footer>
+      <script>
+	var base_url = ".",
+            shortcuts = {"help": 191, "next": 78, "search": 83, "previous": 80};
+      </script>
+      <script src="js/base.js" defer></script>
+      <script src="search/main.js" defer></script>
+      
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+      
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-08-20 03:43:01
+-->

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="HeteroDB,inc">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>サービス - HeteroDB,inc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../custom.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/base.js"></script> 
+    </head>
+
+    <body class=""
+          style="background-image: url(../img/background_photo.jpg);
+                 background-repeat: no-repeat;
+                 background-size: 100%">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="..">
+          <img src="../img/heterodb_logo_s.png" style="margin-right: 120px">
+        </a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+          <!-- Main navigation -->
+          <ul class="nav navbar-nav">
+            <li >
+              <a class="nav-link" href="..">製品</a>
+            </li>
+            <li class="active">
+              <a class="nav-link" href="./">サービス</a>
+            </li>
+            <li >
+              <a class="nav-link" href="../about/">会社情報</a>
+            </li>
+            <li >
+              <a class="nav-link" href="../release/">お知らせ</a>
+            </li>
+            <li><a class="nav-link" href="http://heterodb.github.io/pg-strom/ja/">ドキュメント</a>
+              </li>
+          </ul>
+	</div>
+	<div class="collapse navbar-collapse justify-content-end">
+        <ul class="nav navbar-nav"><li><a class="nav-link" href="../.."><img src="../img/lang_en_off.png"></a></li>
+          <li><a class="nav-link" href="../"><img src="../img/lang_ja.png"></a></li>
+          </li>
+        </ul>
+        </div>
+	</div>
+      </nav><div id="content" class="container">
+        
+      <div class="row"><div class="col-md-1"></div>
+        <div class="col-md-10 rounded bg-white p-3" role="main">
+        
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item active" aria-current="page">サービス</li>
+  </ol>
+</nav>
+
+
+<h2 id="db">DBチューニングサービス</h2>
+<p><img alt="Database Tuning Service" src="../img/service_01a.jpg" /></p>
+<p>PostgreSQLの内部構造に精通したエンジニアがお客様ワークロードを分析し、性能低下の原因を特定。効果、費用、期間等の観点から、問題ワークロードを高速化する最適な方法をご提案します。</p>
+<p><strong>Step-1: ワークロードの分析と診断、対策のご提案</strong></p>
+<ul>
+<li>お客様のワークロードを分析し、問題となっているクエリがどのような原因で性能低下を引き起こしているのか診断します。</li>
+<li>分析結果に基づき、効果、費用、期間等の観点から、問題ワークロードを高速化する最適な方法をご提案します。</li>
+</ul>
+<p><strong>Step-2: PostgreSQLパラメータやシステム設定の修正によるチューニング</strong></p>
+<ul>
+<li>個別クエリの最適化の前に、お客様ワークロードにとって適切なPostgreSQLの設定パラメータや、ストレージを中心としたOS設定の修正をご提案します。</li>
+<li>これらが遠因となって非効率なクエリ実行計画が生成されたり、CPUやI/Oの稼働率が極端に低いといった状況が起こり得るため、システムの規模や特性に応じたリーズナブルな設定が必要です。</li>
+</ul>
+<p><strong>Step-3: データ構造の改善やクエリの書き換えによるチューニング</strong></p>
+<ul>
+<li>クエリの書き換えやデータ構造の修正など、根本的なデータベースチューニングを行います。</li>
+<li>特にバッチ系や解析系の処理では、クエリ最適化が十分でなく不適切な実行計画が生成された場合に、本来の実行速度よりも100倍、10000倍といった水準で遅くなってしまう事も珍しくありません。</li>
+</ul>
+<blockquote>
+<p><strong>ユーザ事例</strong></p>
+<p>数TB規模のDBを運用しているA社ではバッチ系処理のスローダウンが問題となり、Oracle社ExadataやAWS社RedShiftなど高速DWH製品の導入を検討し、その一つとしてPG-Stromにもお声がけいただきました。
+しかしよくよく話を聞いたところ、どうやらDBシステムの実行性能というよりも、適切でないデータ構造や非効率なクエリ実行計画が原因と考えられるケースであったため、DBチューニングサービスのご利用を提案。
+結果、一週間程度のワークロード分析により、インデックスの絞り込み性能の不良や、不適切なクエリ実行計画が明らかになりました。最終的には、PostgreSQL v11のパーティション機能の適用と個別クエリのチューニングにより、ハイエンドDB製品の導入どころか、逆にインスタンスサイズの縮小を検討できる水準にまでDBシステム全体の高速化を実現することができました。</p>
+</blockquote>
+<h1 id="rd">R&amp;D支援サービス</h1>
+<ul>
+<li>弊社の得意領域である、PostgreSQLデータベース、Linuxオペレーティングシステム、GPUコンピューティング（NVIDIA、CUDA C）、およびその周辺領域における研究開発をお手伝いします。</li>
+</ul>
+<p><img alt="R&amp;D Support Service" src="../img/service_03.jpg" /></p>
+<blockquote>
+<p><strong>ユーザ事例</strong></p>
+<p>高速データ処理製品を開発しているY社では、CPUを介さないデバイス～GPU間のデータ転送システムの開発に NVIDIA GPUDirect RDMA の利用を検討しており、すでにPG-StromのSSD-to-GPU Direct SQL機能の開発で当該技術領域の経験が豊富であった弊社にお声がけをいただきました。
+プロジェクトにおいては、主としてLinux kernel moduleの開発に際して、GPUDirect RDMAを利用する際の注意点や性能を引き出すためのヒント、トラブルシューティングにおいて技術的見地からの助言を行い、結果、本プロジェクトでは２ヶ月で目標性能を達成することができました。</p>
+</blockquote>
+<h1 id="gpu">GPUソフトウェア開発</h1>
+<ul>
+<li>GPUやCUDA C、並列コンピューティングに精通したエンジニアが、GPU向けソフトウェアの開発をご支援します。</li>
+<li>お客様ワークロードの特性によっては、PG-Stromのデータフレーム機能を利用して、SQLによる柔軟なデータ処理とGPUによる大規模並列処理の組み合わせソリューションも提案が可能です。</li>
+</ul>
+<blockquote>
+<p><strong>研究事例 - 創薬ワークロードの高速化</strong></p>
+<p>創薬研究を行っているC社との共同研究により、類似化合物探索のワークロードをGPU向けに実装し直し、分割統治と共有メモリ上でのtop-k導出処理を中心としたアルゴリズムの変更により、最大で100倍もの処理性能を実現しました。</p>
+<p><img alt="PL/CUDA for Drug Discovery" src="../img/service_02j.png" /></p>
+<p><a href="../blob/P7129_KAIGAI_PLCUDA.pdf">PL/CUDA - In-database massive parallel analytics (GTC2017)</a>
+</p>
+</blockquote>
+
+<!--
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+-->
+        </div>
+        <div class="col-md-1"></div></div>
+      </div><div class ="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <hr>
+<p class="text-center">
+
+<strong style="font-size: 120%">お問い合わせ</strong>
+</p>
+<div div class="rounded border p-3 bg-white">
+<form action="https://formspree.io/contact@heterodb.com"
+      method="POST"
+      name="sentMessage" id="contactForm">
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>お名前</label>
+      <input type="text" class="form-control" name="name" required
+             data-validation-required-message="Please enter your name.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>会社名</label>
+      <input type="text" class="form-control" name="company" required
+             data-validation-required-message="Please enter your name.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+      <label>メールアドレス</label>
+      <input type="email" class="form-control" name="email" required
+             data-validation-required-message="Please enter your email address.">
+    </div>
+  </div>
+  <div class="control-group form-group">
+    <div class="controls">
+    <label>本文</label>
+    <textarea rows="10" cols="100" class="form-control" name="message" required
+              data-validation-required-message="Please enter your message"
+              maxlength="999" style="resize:none"></textarea>
+    </div>
+  </div>
+  <div id="success"></div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-fw fa-envelope-o"></i> Send Message
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+        </div>
+        <div class="col-md-2"></div>
+      </div><footer class="col-md-12">
+	<hr>
+	<div class="container">
+	  <p>&copy; 2017-2019 HeteroDB, all rights reserved</p>
+	</div>
+      </footer>
+      <script>
+	var base_url = "..",
+            shortcuts = {"previous": 80, "next": 78, "help": 191, "search": 83};
+      </script>
+      <script src="../js/base.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+      
+    </body>
+</html>
