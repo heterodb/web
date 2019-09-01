@@ -3,7 +3,7 @@ BUILD_ROOT = .
 endif
 DOC_FILES = index.md service.md about.md release.md
 
-all: web_en web_ja
+all: web_ja web_en
 
 $(BUILD_ROOT)/markdown_i18n: $(BUILD_ROOT)/markdown_i18n.c
 	$(CC) $(CFLAGS) -o $@ $^
@@ -20,7 +20,7 @@ web_en: $(BUILD_ROOT)/markdown_i18n
 	  -o $(BUILD_ROOT)/html/mkdocs.en.yml
 	pushd $(BUILD_ROOT)/html;		\
 	env LANG=en_US.utf8			\
-	  mkdocs build -c -f mkdocs.en.yml -d ../docs; \
+	  mkdocs build -c -f mkdocs.en.yml -d ../docs/en; \
 	popd
 
 web_ja: $(BUILD_ROOT)/markdown_i18n
@@ -35,5 +35,5 @@ web_ja: $(BUILD_ROOT)/markdown_i18n
 	  -o $(BUILD_ROOT)/html/mkdocs.ja.yml
 	pushd $(BUILD_ROOT)/html;		\
 	env LANG=ja_JP.utf8			\
-	  mkdocs build -c -f mkdocs.ja.yml -d ../docs/ja; \
+	  mkdocs build -c -f mkdocs.ja.yml -d ../docs/; \
 	popd

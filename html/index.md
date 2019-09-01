@@ -14,7 +14,7 @@ PG-Stromは最も広範に利用されているDBシステムの一つ、Postgre
 
 PG-Stromの各種機能は特に、IoT/M2Mといった極めて大規模のデータを扱う領域のログ処理に重点を置いており、DBシステムへのデータの取り込み、データの集計や加工、および異常検知など機械学習アプリケーションとの連携を、シンプルなシングルノード構成のDBサーバで実現します。
 
-これらの特性は、システムコストの削減や大量データの移動に伴う入出力時間の削減といった分かりやすい効果に加えて、全てのオペレーションが多くのエンジニアにとって使い慣れたPostgreSQLシステムの中で動作するため、これまでのスキルや運用ノウハウを引き継ぐ事が可能となり、アプリケーションの品質にも寄与します。
+これらの特性は、システムコストの削減や大量データの移動に伴う入出力時間の削減といった分かりやすい効果に加えて、全てのオペレーションが多くのエンジニアにとって使い慣れたPostgreSQLシステムの中で動作するため、これまでのスキルや運用ノウハウを引き継ぐ事が可能となり、アプリケーションの品質改善にも寄与します。
 }
 
 @en{
@@ -61,93 +61,33 @@ PG-Strom is an extension for PostgreSQL, designed for acceleration of summarizin
 It supports on-GPU execution of WHERE, JOIN and GROUP BY which are CPU intensive workloads. Once PostgreSQL query optimizer chooses on-GPU execution, PG-Strom generates GPU binary code from the SQL by JIT (just-in-time) compile, then asynchronously runs on GPU in massive parallel.
 }
 
-@ja{
-**なぜPG-StromはPostgreSQLとシームレスな統合が可能なのか**
-
-- 共通のクエリ
-    - PG-StromはSQL構文がパースされた後の内部データ構造を参照し、GPUでのSQL実行が可能かどうかを判定します。 したがって、特別なSQL命令を与える必要はなく、"重い処理"だけを選択して透過的にGPUで実行する事ができます。
-- 共通のデータ
-    - PG-StromはPostgreSQLのデータ構造／ストレージ形式をそのまま使用します。そのため、特別なテーブルへデータを移行したり、データ形式を変換したりする事なく利用する事ができます。
-- 共通のフック
-    - PG-StromはPostgreSQLが標準でサポートする内部API(フック)のみを用いて実装されています。そのため、PostgreSQL本体へのパッチや特別な修正なしにインストールする事ができます。
-}
-@en{
-**Why PG-Strom can cooperate with PostgreSQL seamlessly?**
-
-- No query changes
-    - PG-Strom checks an internal data structure that is already parsed from SQL statement, to determine whether it is a reasonable workload for GPU execution. So, it automatically picks up "heavy workloads" and no manual controls are needed.
-- No data migration
-    - PG-Strom utilizes the data structure and storage format of PostgreSQL as is, so no need to migrate your data to special tables, or transform the data format.
-- No patches
-    - PG-Strom is all implemented on top of the internal hooks supported by PostgreSQL, so we can install the software without any special patches or custom enhancement.
-}
-
-@ja:##ストレージの速度を最大化する SSD-to-GPU Direct SQL
-@en:##SSD-to-GPU Direct SQL for maximum storage throughput
+@ja:##ストレージの能力を最大限に引き出すSSD-to-GPU Direct SQL
+@en:##SSD-to-GPU Direct SQL for maximum storage performance
 
 @ja{
-HeteroDB社のユニーク技術、SSD-to-GPU Direct SQLテクノロジは、高速ストレージと並列プロセッサ間を直接繋ぐデータパスを構築し、NVME-SSDの物理限界に近い速度でSQLを実行し、通常は"計算のアクセラレータ"として利用されるGPUを用いてI/O中心のワークロードを高速化します。
+HeteroDB社のユニーク技術、SSD-to-GPU Direct SQLテクノロジは、NVMEストレージ上のPostgreSQLデータブロックを直接GPUへ転送し、CPU/RAMへデータをロードする前にSQLワークロードを処理します。これによりCPUが処理すべきデータ量を小さくする事が可能で、GROUP BYによる集約処理まで行う事ができれば、データサイズが1/1000やそれ以下になるという事も珍しくありません。
+通常は"計算のアクセラレータ"として利用される事の多いGPUですが、データ転送パスの途中で『予め不要なレコードを捨てる』ために利用する事で、I/Oが負荷の中心であるSQLワークロードであってもGPUの手助けによって高速化が可能となるのです。
 
 ![SSD-to-GPU Direct SQL](img/tech_11j.png)
 }
 @en{
-SSD-to-GPU Direct SQL, is a unique technology of HeteroDB, builds a direct data path between fast storage and parallel processors, to execute SQL workloads at a speed close to the physical limit of NVME-SSD. GPU is usually considered as a "computing accelerator", but I/O intensive workloads are also accelerated.
+SSD-to-GPU Direct SQL, a unique technology of HeteroDB, enables to load PostgreSQL data blocks on NVME storage to GPU device directly, then executes SQL workloads prior to data load on CPU/RAM. It reduces the data size to be processed by CPU, and it is not rare that data size becomes 1/1000 or less, if GPU can handle aggregation operations with GROUP BY.
+Even though GPU is usually considered as a "computing accelerator", it can also accelerate I/O intensive SQL workloads by utilization of GPU for "data reduction on the way of I/O bus".
 
 ![SSD-to-GPU Direct SQL](img/tech_11e.png)
 }
 
 @ja{
-**コンセプト**
-
-ストレージ上のPostgreSQLデータブロックを読み出してCPU/RAMへ転送する前に、まずこれらのデータブロックをGPUへ転送してSQLワークロードを処理すれば、ほとんどの場合、データ量を小さくする事ができます。GROUP BYによる集約処理まで行う事ができれば、データサイズが1/1000やそれ以下という事も珍しくありません。
-これは結果として、CPU/RAMへ転送すべきI/O量を減らす事となるため、I/Oが負荷の中心であるSQLワークロードであっても、GPUの手助けによって高速化が可能となるのです。
-
-CPUの視点からNVMe-SSDとGPUの協調動作を眺めると、あたかもストレージ機器がSQLワークロードを解釈し、明らかに不要であるデータを削除、あるいは前処理を行った上で、データが読み出されているかのように見えるのです。
-}
-@en{
-**Concept**
-
-Before PostgreSQL data blocks on storage are loaded and transferred to CPU/RAM, in most case, we can reduce amount of the data by direct transfer of these data block onto GPU first, and processing the SQL workloads here. If GPU can handle aggregation operations with GROUP BY, it is not rare that data size becomes 1/1000 or less.
-It reduces the amount of I/O to be transferred to CPU/RAM in the results, so GPU enables to accelerate I/O intensive workloads.
-
-From the viewpoint of CPU, the collaboration of NVMe-SSD and GPU looks an intelligent storage device which can understand SQL workloads, for elimination of definitely unnecessary rows or for pre-process to the post stage.
-}
-@ja{
 **背景技術 - GPUDirect RDMA**
 
-この仕組みの基盤となっているのがNVIDIA GPUDirect RDMAで、GPUデバイスメモリ上の特定の領域をホストシステムの物理アドレス空間にマップするための機能です。GPUデバイスメモリが物理アドレスを持っていれば、PCIeデバイスとのDMAの際に、この領域をデータ転送先/元として使用する事ができるようになります。この時、データ転送はCPU/RAMを介さずにPCIeデバイス同士のピアツーピアで行われます。
-
-GPUDirect RDMAは本来、MPI over Infinibandを実現するために開発された機能ですが、カスタムLinux kernel moduleがGPUデバイスメモリとPCIeデバイスとのDMAを適切に仲介すれば、他のPCIeデバイスにも応用する事ができます。
-私たちはこれを、NVMe-SSDとGPUとの間のダイレクト読み出しに利用しています。
+この仕組みの基盤となっているのがNVIDIA GPUDirect RDMAで、GPUデバイスメモリと他のPCIeデバイスとの間でピアツーピアのデータ転送を可能とするものです。
+GPUDirect RDMAは元々、Infinibandを介したGPUサーバ間のMPIを高速化するために開発された機能ですが、カスタムLinux kernel moduleを開発すれば、他のPCIeデバイスとGPUとのデータ通信を高速化するためにも利用できます。私たちはこれを、NVME-SSDとGPUとの間のダイレクト読み出しに応用しています。
 }
 @en{
 **Technology Basis - GPUDirect RDMA**
 
-NVIDIA GPUDirect RDMA is technology basis of this mechanism. It enables to map a particular region of GPU device memory on physical address space pf host systems. Once GPU device memory is mapped on, we can use this address as source or destination of DMA data transfer. CPU/RAM does not intermediate this data transfer, exchanged over PCIe bus using peer-to-peer transfer between PCIe devices.
-
-GPUDirect RDMA is originally designed for  MPI over Infiniband, on the other hands, we can apply this feature on other type of PCIe devices as long as custom Linux kernel module intermediates DMA transfer properly.
-We utilized this infrastructure for the close cooperation between NVME-SSD and GPU.
-}
-
-@ja{
-**なぜGPUでI/Oワークロードを高速化できるのか？**
-
-- ダイレクト転送
-    - PostgreSQLが通常用いるファイルシステム経由のI/Oでは、ストレージからデータブロックを読み出し、アプリケーションのバッファにデータを転送するまでに何回もコピーを繰り返す事になり、これらはデータ量に比例してCPUサイクルを消費する事になります。
-    - SSD-to-GPUダイレクトSQL実行を用いた場合、SSDから読み出されたデータはGPUのバッファに直接、しかも非同期に転送されます。これにより、CPUやGPUをデータコピー処理から解放し、SQLワークロードの処理という本来の仕事に全ての処理サイクルを費やす事が可能となるのです。
-- データ量を減らす
-    - 元々、PG-StromはPostgreSQLのレコード（行データ形式）に対して、GPU上でWHERE句、JOIN、GROUP BYを実行する機能を持っており、多くの場合、これらのSQL操作はレコード数を減少させる方向に作用するという特性があります。
-    - したがって、SSDから読み出したPostgreSQLデータブロックをGPUで前処理する事により、結果としてCPU/RAMにロードすべきI/O量を減少させる事が可能となります。そのため、NVME-SSDの限界性能に近い速度でデータブロックを読み出しているにも関わらず、CPUが実際に処理すべきレコード数は非常に少ないという状況を作り出すことができます。
-}
-@en{
-**Why GPU can accelerate I/O workloads?**
-
-- Direct Data Transfer
-    - The filesystem based I/O, used by PostgreSQL, takes multiple buffer copies on storage block read. It also consumes CPU cycles according to the data size.
-    - In case of SSD-to-GPU direct SQL, data blocks loaded from SSD are put on GPU device directly and asynchronously. It releases CPU/GPU from the workload of data copy, and allows them to focus on SQL workloads processing; only CPU/GPU can do.
-- Reduction of data size
-    - PG-Strom originally processes WHERE, JOIN and GROUP BY on GPU device for PostgreSQL data (row data format). These SQL operations perform to reduce number of rows in most cases.
-    - Thus, pre-processing data blocks of PostgreSQL read from SSD by GPU enables to reduce amount of I/O to be loaded onto CPU/RAM eventually. Even though we load data blocks from NVME-SSD very fast close to the physical limitation, CPU needs to process very small number of rows.
+NVIDIA GPUDirect RDMA is technology basis of this mechanism. It enables peer-to-peer data transfer between GPU device memory and other PCIe devices.
+GPUDirect RDMA is originally designed for MPI over Infiniband between GPU servers, on the other hands, we can utilize this feature on other type of PCIe devices as long as custom Linux kernel module intermediates data transfer on these devices. We applied this infrastructure for the close cooperation on NVME-SSD and GPU.
 }
 
 @ja:##Apache Arrow形式に対応した列データストア
@@ -277,10 +217,34 @@ PG-Strom supports to run anomaly detection logic based on statistical analysis a
 @ja:#製品構成・仕様
 @en:#Product Specification
 
+@ja:## ハードウェア構成例
+@en:## Example of hardware configuration
 
-- ハードウェア構成は[HW-Validation-List](https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List#hardware-validation-list)をご確認ください。
-- OS: Red Hat Enterprise Linux 
+![Anomaly Detection](img/server_01.png)
 
+|model|Supermicro SYS-1019GP-TT         |Qty|
+|:---:|:--------------------------------|:-:|
+|CPU  |Intel Xeon Gold 6126T(12C,2.6GHz)|  1|
+|RAM  |16GB (DDR4-2666; ECC)            | 12|
+|GPU  |NVIDIA Tesla V100 (5120C, 32GB)  |  1|
+|SSD  |Intel DC P4600 (2.0TB; HHHL)     |  3|
+|HDD  |2.0TB (SATA; 7.2krpm; 2.5")      |  6|
+
+@ja{
+- 認証済みハードウェア構成の一覧は[HW-Validation-List](https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List#hardware-validation-list)をご確認ください。
+- ソフトウェア要件
+    - OS: Red Hat Enterprise Linux 7.x / CentOS 7.x
+    - CUDA: CUDA Toolkit 10.1以降
+    - DB: PostgreSQL v9.6, v10, v11
+}
+
+@en{
+- Check [HW-Validation-List](https://github.com/heterodb/pg-strom/wiki/002:-HW-Validation-List#hardware-validation-list) for full list of the validated hardware configurations.
+- Software requirements
+    - OS: Red Hat Enterprise Linux 7.x / CentOS 7.x
+    - CUDA: CUDA Toolkit 10.1 or later
+    - DB: PostgreSQL v9.6, v10, v11
+}
 
 @ja:## サブスクリプション製品
 @en:## Software Subscription

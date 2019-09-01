@@ -22,9 +22,11 @@ table {
 }
 th {
     border-bottom: 2px solid black;
+    padding: 4px 12px 4px 12px;
 }
 td {
     border-bottom: 1px solid gray;
+    padding: 4px 12px 4px 12px;
 }
 p {
     margin-bottom: 0.5rem;

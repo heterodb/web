@@ -119,12 +119,19 @@
 	<div class="collapse navbar-collapse justify-content-end">
         <ul class="nav navbar-nav">
         {%- if config.site_lang == 'ja' -%}
-          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/.."><img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_en_off.png"></a></li>
-          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/"><img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_ja.png"></a></li>
+          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/en/{{ page.url }}">
+              <img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_en_off.png"></a>
+          </li>
+          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/{{ page.url }}">
+              <img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_ja.png"></a>
           </li>
         {% else %}
-          <li><a class="nav-link" href="{{ nav.homepage.url|url }}"><img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_en.png"></a></li>
-          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/ja"><img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_ja_off.png"></a></li>
+          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/{{ page.url }}">
+              <img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_en.png"></a>
+          </li>
+          <li><a class="nav-link" href="{{ nav.homepage.url|url }}/../{{ page.url }}">
+              <img src="{% if page and page.is_homepage %}.{% else %}..{% endif %}/img/lang_ja_off.png"></a>
+          </li>
         {%- endif -%}
         </ul>
         </div>
