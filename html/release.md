@@ -2,6 +2,35 @@
 hide_toc: on
 ---
 
+<h1 class="headline" id="20191030">
+@ja:PostgreSQL Conference Japan 2019のスポンサーになりました。
+@en:HeteroDB sponsored PostgreSQL Conference Japan 2019
+</h1>
+<p class="headline">
+@ja:2018年10月30日(水)
+@en:30-Apr-2018 (Wed)
+</p>
+@ja{
+ヘテロDB株式会社は、2019年11月15日(金)に開催の[PostgreSQL Conference Japan 2019](https://www.postgresql.jp/jpug-pgcon2019)のシルバースポンサーになりました。
+}
+@en{
+HeteroDB became a silver sponsor of [PostgreSQL Conference Japan 2019](https://www.postgresql.jp/jpug-pgcon2019) held at 15th-Nov-2019 (Fri).
+}
+
+![PostgreSQL Conference Japan 2019](img/press_20191030.png)
+
+@ja{
+本カンファレンスでは、弊社代表取締役の海外が『PostgreSQLだってビッグデータ処理したい！！ ～GPUとNVMEを駆使して毎秒10億レコードを処理する技術～』と題して講演を行うほか、PostgreSQLコミュニティで長年にわたり活躍されてきたスピーカーによる、総計14のセッション、チュートリアルが予定されております。
+
+皆さまのご参加を心待ちにしております。
+}
+@en{
+In this conference, KaiGai Kohei (Chief Architect & CEO of HeteroDB,Inc) will have a talk entitled "PostgreSQL meets big-data processing!! - billion rows per second data processing by GPU and NVME", and there are 14 sessions and tutrials by excellent speakers who have worked at PostgreSQL community for a long time.
+
+We are looking forward to see you in the conference.
+}
+
+
 <h1 class="headline" id="20180418">
 @ja:ヘテロDB、GPUを用いたデータベース高速化技術PG-Stromの販売を開始
 @en:HeteroDB released PG-Strom products for GPU acceleration of database workloads
