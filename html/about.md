@@ -11,7 +11,7 @@ with_contact_form: on
 @ja{
 - **会社名**: ヘテロDB株式会社
 - **英文表記**： HeteroDB,Inc
-- **所在地**: 東京都品川区西大井1-1-2-206 （西大井創業支援センター内）
+- **所在地**: 東京都品川区北品川5-13-15-403
 - **設立**: 2017年7月4日(火)
 - **資本金**: 999万円
 - **代表者**: 海外 浩平
@@ -25,7 +25,7 @@ with_contact_form: on
 }
 @en{
 - **Corporate Name**: HeteroDB,Inc
-- **Location**: 1-1-2-206, Nishioi, Shinagawa-ku, Tokyo, Japan
+- **Location**: 5-13-15-403, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan
 - **Date of establishment**: 4th-July-2017
 - **Legal capital**: 9.99M JPY
 - **CEO**: KaiGai Kohei
@@ -38,6 +38,7 @@ with_contact_form: on
     - :fa-phone: 03-6428-9607
 }
 
+<!--
 <h1 class="section" id="location">
 @ja:会社所在地
 @en:Office Location
@@ -51,6 +52,7 @@ with_contact_form: on
     - 13min from Tokyo-station, 4min from Shinagawa-station on the Yokosuka-line
 }
 <iframe src="https://www.google.com/maps/d/embed?mid=1H35V4uTydwyscuOomnBNQOqcNK8&hl=ja" width="640" height="480"></iframe>
+-->
 
 <h1 class="section" id="team">
 @ja:代表者プロフィール
