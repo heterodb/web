@@ -9,7 +9,7 @@ hide_toc: on
 
 <h2>
 @ja:職務内容
-@en:Jon Description
+@en:Job Description
 </h2>
 @ja{
 - GPU版PostGIS関数のリグレッションテストの開発
@@ -60,7 +60,7 @@ hide_toc: on
 @en{
 - Send your resume to `contact@heterodb.com`.
 - In addition to your background, skills and professionals, please write down the following items, if any.
-    - SNA account (github, twitter, facebook, ...)
+    - SNS account (github, twitter, facebook, ...)
     - Contributions to major open source projects (Linux kernel, PostgreSQL, ...)
     - Graduation of IPA Mitoh Project, or security camp.
 - Next to the documentary screening, we will have an oral interview on web conference system.
