@@ -37,3 +37,5 @@ web_ja: $(BUILD_ROOT)/markdown_i18n
 	env LANG=ja_JP.utf8			\
 	  mkdocs build -c -f mkdocs.ja.yml -d ../docs/; \
 	popd
+	echo -n heterodb.com > $(BUILD_ROOT)/docs/CNAME
+
