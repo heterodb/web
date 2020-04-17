@@ -1,7 +1,7 @@
 ifndef BUILD_ROOT
 BUILD_ROOT = .
 endif
-DOC_FILES = index.md service.md about.md release.md
+DOC_FILES = index.md service.md about.md release.md recruit.md
 
 all: web_ja web_en
 
