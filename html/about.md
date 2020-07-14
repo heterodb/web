@@ -21,7 +21,7 @@ with_contact_form: on
     - データベース、オープンソース領域の技術開発
 - **問い合わせ先**
     - :fa-envelope: contact@heterodb.com
-    - :fa-phone: 03-6428-9607
+    - :fa-phone: 03-6409-6445
 }
 @en{
 - **Corporate Name**: HeteroDB,Inc
@@ -35,7 +35,7 @@ with_contact_form: on
     - Development of database and open source software
 - **Contact**
     - :fa-envelope: contact@heterodb.com
-    - :fa-phone: 03-6428-9607
+    - :fa-phone: +81-3-6409-6445
 }
 
 <!--

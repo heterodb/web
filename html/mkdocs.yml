@@ -19,14 +19,14 @@ nav:
 - 'Service' : 'service.md'
 - 'About'   : 'about.md'
 - 'Release' : 'release.md'
-- 'Recruit' : 'recruit.md'
+#- 'Recruit' : 'recruit.md'
 }
 @ja{
 - '製品'     : 'index.md'
 - 'サービス' : 'service.md'
 - '会社情報' : 'about.md'
 - 'お知らせ' : 'release.md'
-- '求人情報' : 'recruit.md'
+#- '求人情報' : 'recruit.md'
 }
 extra_css:
     - 'custom.css'
