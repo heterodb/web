@@ -11,7 +11,8 @@ with_contact_form: on
 @ja{
 - **会社名**: ヘテロDB株式会社
 - **英文表記**： HeteroDB,Inc
-- **所在地**: 東京都品川区北品川5-13-15-403
+- **所在地**: 東京都品川区北品川5-5-15 大崎ブライトコア4F
+    - SHIP品川産業支援交流施設416号室
 - **設立**: 2017年7月4日(火)
 - **資本金**: 999万円
 - **代表者**: 海外 浩平
@@ -25,7 +26,8 @@ with_contact_form: on
 }
 @en{
 - **Corporate Name**: HeteroDB,Inc
-- **Location**: 5-13-15-403, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan
+- **Location**: 5-5-15, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan
+    - Osaki Bright-core 4F (Room 416)
 - **Date of establishment**: 4th-July-2017
 - **Legal capital**: 9.99M JPY
 - **CEO**: KaiGai Kohei
@@ -38,21 +40,18 @@ with_contact_form: on
     - :fa-phone: +81-3-6409-6445
 }
 
-<!--
 <h1 class="section" id="location">
 @ja:会社所在地
 @en:Office Location
 </h1>
 
 @ja{
-- JR横須賀線 西大井駅より徒歩1分
+- JR大崎駅 南口より徒歩5分
 }
 @en{
-- 1 min on walk from the Nishiooi-station at JR Yokosuka-line
-    - 13min from Tokyo-station, 4min from Shinagawa-station on the Yokosuka-line
+- 1 min on walk from the JR Osaki-station
 }
-<iframe src="https://www.google.com/maps/d/embed?mid=1H35V4uTydwyscuOomnBNQOqcNK8&hl=ja" width="640" height="480"></iframe>
--->
+<iframe src="https://www.google.com/maps/d/embed?mid=1qWPEGMIIDhvyeC5PdR9LNccNm_GPdTR2" width="640" height="480"></iframe>
 
 <h1 class="section" id="team">
 @ja:代表者プロフィール
