@@ -2,13 +2,76 @@
 hide_toc: on
 ---
 
+<h1 class="headline" id="20201127">
+@ja:事務所移転のお知らせ
+@en:HeteroDB office was relocated
+</h1>
+<p class="headline">
+@ja:2020年11月4日(水)
+@en:4-Nov-2020 (Wed)
+</p>
+@ja{
+本日、ヘテロDB株式会社は下記の住所へ移転いたしました。
+
+〒141-0001<br>
+東京都品川区北品川5-5-15 大崎ブライトコア4F<br>
+品川区産業交流施設SHIP内 416号室
+
+心機一転、今後もPG-Stromの開発と普及に努めてまいります。
+今後もお引き立てのほど、よろしくお願いいたします。
+}
+@en{
+Today, HeteroDB was relocated to the address below:
+
+5-5-15, Kita-Shinagawa<br>
+Osaki Brightcore 4F (SHIP 416)<br>
+Shinagawa-ku, Tokyo, Japan<br>
+(zipcode: 141-0001)
+
+We will strive to develop and popularize PG-Strom.
+We look forward to your continued patronage.
+}
+
+![Osaki Brightcore 4F](img/press_20201104.jpg)
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1qWPEGMIIDhvyeC5PdR9LNccNm_GPdTR2" width="640" height="480"></iframe>
+
+<h1 class="headline" id="20200915">
+@ja:PostgreSQL Conference Japan 2020のスポンサーになりました。
+@en:HeteroDB sponsored PostgreSQL Conference Japan 2020
+</h1>
+<p class="headline">
+@ja:2020年9月15日(水)
+@en:15-Sep-2019 (Tue)
+</p>
+@ja{
+ヘテロDB株式会社は、2020年11月13日(金)に開催の[PostgreSQL Conference Japan 2020](https://www.postgresql.jp/jpug-pgcon2020)のシルバースポンサーになりました。
+}
+@en{
+HeteroDB became a silver sponsor of [PostgreSQL Conference Japan 2020](https://www.postgresql.jp/jpug-pgcon2020) held at 13th-Nov-2030 (Fri).
+}
+
+![PostgreSQL Conference Japan 2020](img/press_20200915.png)
+
+@ja{
+本カンファレンスでは、弊社代表取締役の海外が『GPU が拓く地理情報分析の新たな地平 ～GPU 版 PostGIS と位置ゲームを使った検証～』と題して講演を行うほか、PostgreSQLコミュニティで長年にわたり活躍されてきたスピーカーによる、総計14のセッション、チュートリアルが予定されております。
+
+皆さまのご参加を心待ちにしております。
+}
+@en{
+In this conference, KaiGai Kohei (Chief Architect & CEO of HeteroDB,Inc) will have a talk entitled "The new horizon of geolocation analytics by GPU - Implementation and evaluation of GPU-edition of PostGIS", and there are 14 sessions and tutrials by excellent speakers who have worked at PostgreSQL community for a long time.
+
+We are looking forward to see you in the conference.
+}
+
+
 <h1 class="headline" id="20191030">
 @ja:PostgreSQL Conference Japan 2019のスポンサーになりました。
 @en:HeteroDB sponsored PostgreSQL Conference Japan 2019
 </h1>
 <p class="headline">
-@ja:2018年10月30日(水)
-@en:30-Apr-2018 (Wed)
+@ja:2019年10月30日(水)
+@en:30-Oct-2019 (Wed)
 </p>
 @ja{
 ヘテロDB株式会社は、2019年11月15日(金)に開催の[PostgreSQL Conference Japan 2019](https://www.postgresql.jp/jpug-pgcon2019)のシルバースポンサーになりました。

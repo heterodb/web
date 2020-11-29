@@ -46,10 +46,12 @@ with_contact_form: on
 </h1>
 
 @ja{
+- 東京都品川区北品川5-5-15 大崎ブライトコア4F
 - JR大崎駅 南口より徒歩5分
 }
 @en{
-- 1 min on walk from the JR Osaki-station
+- 5-5-15, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan
+- 5 min on walk from the JR Osaki-station
 }
 <iframe src="https://www.google.com/maps/d/embed?mid=1qWPEGMIIDhvyeC5PdR9LNccNm_GPdTR2" width="640" height="480"></iframe>
 
@@ -112,7 +114,11 @@ Bachelor of computer science, University of Tsukuba. Master of business administ
 @ja:## コミュニティイベントでの発表
 @en:## Talks at community conferences
 
-- PGconf.ASIA 2019 (Bali, Indonesia)
+- PostgreSQL Conference Japan 2020 (Tokyo, Japan; 2020-11-13) [[slides]](https://www.slideshare.net/kaigai/20201113pgconfjapangpupostgis)
+- PostgreSQL Conference Online Webinar (online; 2020-10-06) [[slides]](https://www.slideshare.net/kaigai/20201006pgconfonlinelargedataprocessing)
+- Apache Arrow Meetup Tokyo 2019 (Tokyo, Japan; 2019-12-09) [[slides]](https://www.slideshare.net/kaigai/20191211apachearrowmeetuptokyo)
+- PostgreSQL Conference Japan 2019 (Tokyo, Japan; 2019-11-15) [[slides]](https://www.slideshare.net/kaigai/20191115pgconfjapan)
+- PGconf.ASIA 2019 (Bali, Indonesia: 2019-09-09) [[slides]](https://www.slideshare.net/kaigai/20190909pgconfasiakaigai)
 - Deep Learning Community#10 (Tokyo, Japan; 2019-05-16) [[slides]](https://www.slideshare.net/kaigai/20190516dlc10pgstrom)
 - PGconf.ASIA 2018 (Tokyo, Japan; 2018-12-11) [[slides]](https://www.slideshare.net/kaigai/20181211-pgconfasia-nvmessdgpu-for-bigdata)
 - PGconf.EU 2018 (Lisbon, Portugal; 2018-10-26) [[slides]](https://www.slideshare.net/kaigai/20181016pgconfeussd2gpumulti)
