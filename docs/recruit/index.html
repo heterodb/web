@@ -14,7 +14,7 @@
         <meta name="author" content="HeteroDB,inc">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Recruit - HeteroDB,inc</title>
+        <title>求人情報 - HeteroDB,inc</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -64,6 +64,9 @@
             <li >
               <a class="nav-link" href="../release/">お知らせ</a>
             </li>
+            <li class="active">
+              <a class="nav-link" href="./">求人情報</a>
+            </li>
             <li><a class="nav-link" href="http://heterodb.github.io/pg-strom/ja/">ドキュメント</a>
               </li>
           </ul>
@@ -88,13 +91,13 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
-    <li class="breadcrumb-item active" aria-current="page">Recruit</li>
+    <li class="breadcrumb-item active" aria-current="page">求人情報</li>
   </ol>
 </nav>
 
 
 <h1 class="section" id="position_00">
-ソフトウェアエンジニア（アルバイト）
+ソフトウェアエンジニア（パートタイム）
 </h1>
 
 <h2>
@@ -102,12 +105,21 @@
 </h2>
 
 <ul>
-<li>GPU版PostGIS関数のリグレッションテストの開発<ul>
-<li>PG-Stromの新機能として開発中のGPU版PostGIS関数/演算子が、標準のPostGISと同一の計算結果を返す事を確認するためのリグレッションテストを開発します。</li>
+<li>PG-Strom開発支援<ul>
+<li>PG-Strom動作検証：各種のプラットフォームでPG-Stromを動作させ、動作検証と性能分析を行います。</li>
+<li>PG-Stromテストケース開発：PG-Stromの各種機能を検証するためのリグレッションテストを開発します。</li>
+<li>PG-Strom障害解析：報告されたPG-Stromのトラブルを再現し、デバッガやプロファイラを用いて障害の原因を探ります。</li>
+<li>ドキュメント作成：製品ドキュメントやナレッジベースの作成、翻訳を行います。</li>
 </ul>
 </li>
-<li>PG-Stromの既存リグレッションテストの拡充<ul>
-<li>整数、浮動小数点、日付時刻型、文字列型などに対するリグレッションテストのテストシナリオを追加し、コーナーケースでの問題を検出できるようにします。</li>
+<li>PostgreSQL新機能提案<ul>
+<li>PG-Stromの実装に必要な諸機能をPostgreSQL開発者コミュニティへ提案し、標準機能化を目指します。</li>
+</ul>
+</li>
+<li>この職務を通じてあなたが学べる事<ul>
+<li>PostgreSQL/PG-Stromの内部構造と、障害解析、性能分析、および拡張モジュール開発の手法</li>
+<li>Linuxシステム上での障害解析、性能分析、システム管理の手法</li>
+<li>OSS開発者コミュニティへのコントリビューション</li>
 </ul>
 </li>
 </ul>
@@ -116,12 +128,18 @@
 </h2>
 
 <ul>
-<li>Linuxオペレーティングシステムにおける一般的な操作に習熟している事</li>
-<li>SQLを用いたPostgreSQLデータベースの操作に習熟している事</li>
-<li>PostGISを利用した事があり、独力でテスト用データを作成する事ができる</li>
-<li>日本語による口頭でのコミュニケーションが可能であれば望ましい</li>
-<li>以下の都府県に居住し、給与振込先として日本国内の銀行口座を保有している事<ul>
-<li>東京都、埼玉県、千葉県、神奈川県、茨城県、栃木県、群馬県、山梨県</li>
+<li><strong>必須スキル</strong><ul>
+<li>情報工学系の学部卒業、またはそれに相当するコンピュータサイエンス全般に対する知識</li>
+<li>Linuxオペレーティングシステムの概要および一般的な操作、システム管理に習熟している事</li>
+<li>PostgreSQLデータベースシステムの概要および一般的な操作、システム管理に習熟している事</li>
+<li>C言語によるシステムプログラミングに習熟している事</li>
+<li>英語文書を読み書きができ、電子メールを通じて外国人とコミュニケーションを取ることができる</li>
+</ul>
+</li>
+<li><strong>望ましい</strong><ul>
+<li>日本語文書の読み書き、および口頭でのコミュニケーションが可能であれば望ましい</li>
+<li>CUDA C/OpenCLによるGPUプログラミングの経験があれば望ましい</li>
+<li>OSS開発者コミュニティにパッチを投稿し、標準機能化のための議論を行った経験があれば望ましい。</li>
 </ul>
 </li>
 </ul>
@@ -135,6 +153,7 @@
 <li>SNSアカウント（github、twitter、facebookなど）</li>
 <li>主要OSSプロジェクト（Linux kernel、PostgreSQLなど）へのコントリビューション</li>
 <li>IPA未踏ソフトウェア、未踏ユース、またはセキュリティキャンプ経験者</li>
+<li>国内外の学会やカンファレンスでの発表経験、学術誌での論文発表</li>
 </ul>
 </li>
 <li>書類選考の後、Webミーティングによる面接を行います。</li>
@@ -145,12 +164,19 @@
 </h2>
 
 <ul>
-<li>給与：時給 \2,000円（毎月月末払い）</li>
+<li>給与：時給2,000円～3,000円（毎月月末払い）<ul>
+<li>能力・経験により決定します。</li>
+</ul>
+</li>
 <li>勤務時間：最大40時間/月</li>
-<li>勤務地：フルリモート勤務</li>
-<li>契約期間：2020年5月上旬～</li>
+<li>勤務地：フルリモート勤務可<ul>
+<li>希望に応じて、弊社大崎オフィスでの勤務も可能です</li>
+</ul>
+</li>
+<li>契約条件：有期雇用契約（３ヶ月・更新あり）</li>
+<li>募集人数：1名</li>
 <li>その他：<ul>
-<li>開発用サーバ環境は当方で用意しますが、端末PCやネットワーク環境はご自身のものをご利用ください。</li>
+<li>開発用サーバ環境は当方で用意しますが、リモート勤務の場合、端末PCやネットワーク環境はご自身のものをご利用ください。</li>
 </ul>
 </li>
 </ul>
