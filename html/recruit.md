@@ -81,7 +81,7 @@ hide_toc: on
 - ご自身、または同居の家族が反社会的勢力に属している方はご応募になれません。
 }
 @en{
-　　- Send your resume to `contact@heterodb.com`.
+- Send your resume to `contact@heterodb.com`.
 - In addition to your background, skills and professionals, please write down the following items, if any.
     - SNS account (github, twitter, facebook, ...)
     - Contributions to major open source projects (Linux kernel, PostgreSQL, ...)
