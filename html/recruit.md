@@ -13,12 +13,14 @@ hide_toc: on
 </h2>
 @ja{
 - PG-Strom開発支援
-    - PG-Strom動作検証：各種のプラットフォームでPG-Stromを動作させ、動作検証と性能分析を行います。
-    - PG-Stromテストケース開発：PG-Stromの各種機能を検証するためのリグレッションテストを開発します。
-    - PG-Strom障害解析：報告されたPG-Stromのトラブルを再現し、デバッガやプロファイラを用いて障害の原因を探ります。
-    - ドキュメント作成：製品ドキュメントやナレッジベースの作成、翻訳を行います。
+    - PG-Stromとは、GPUを用いて大量データ処理を高速化するPostgreSQL向け拡張モジュールです。本ポジションでは、PG-Strom開発における以下の作業を行っていただきます。
+    - 動作検証：各種のプラットフォームでPG-Stromを動作させ、動作検証と性能分析を行います。
+    - テストケース開発：PG-Stromの各種機能を検証するためのリグレッションテストを開発します。
+    - 障害解析：報告されたPG-Stromのトラブルを再現し、デバッガやプロファイラを用いて障害の原因を探ります。
+    - ドキュメント：製品ドキュメントやナレッジベースの作成、翻訳を行います。
 - PostgreSQL新機能提案
     - PG-Stromの実装に必要な諸機能をPostgreSQL開発者コミュニティへ提案し、標準機能化を目指します。
+    - 例：Foreign TableのTruncate対応、Partition-wise JOIN対応など
 - この職務を通じてあなたが学べる事
     - PostgreSQL/PG-Stromの内部構造と、障害解析、性能分析、および拡張モジュール開発の手法
     - Linuxシステム上での障害解析、性能分析、システム管理の手法
@@ -26,12 +28,14 @@ hide_toc: on
 }
 @en{
 - PG-Strom development assistant
+    - PG-Strom is an extension module of PostgreSQL to accelerate large scale data processing. We expect you to contribute the following tasks in this position.
     - Validation of PG-Strom on various platforms, and performance analysis
     - Development of PG-Strom test cases using PostgreSQL's regression test
     - Trouble analysis: reproduction and investigation of the reported troubles
     - Documentation: production manual, knowledge base, and its translations
 - Features proposition to PostgreSQL
     - Proposition of new features to implement PG-Strom for PostgreSQL developer's community.
+    - Example: Truncate support at foreign tables, Partition-wise JOIN support, and so on...
 - What you can learn through the position
     - The internal, trouble analysis, and performance analysis of PostgreSQL/PG-Strom, and way to develop its extension modules.
     - Trouble analysis, performance analysis of Linux system, and way to administrate servers.
