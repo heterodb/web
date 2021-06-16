@@ -105,7 +105,7 @@ For example, when you want to deliver an advertisement to smartphonws in a parti
 }
 
 @ja{
-HeteroDB株式会社は、PG-Stromのさらなる機能強化や性能改善をはじめとしたソフトウェアの改良にコミットし『オモシロ技術を形にする』事にこだわっていくと共に、GPUやPostgreSQL、Linuxといった関連技術を通じてお客様システムの設計、運用、改善をサポートして参ります。
+HeteroDB株式会社は、PG-Stromのさらなる機能強化や性能改善をはじめとしたソフトウェアの改良にコミットし『オモシロ技術をカタチにする』事にこだわっていくと共に、GPUやPostgreSQL、Linuxといった関連技術を通じてお客様システムの設計、運用、改善をサポートして参ります。
 }
 @en{
 HeteroDB Inc has been committed to the software improvements such as further enhancements and performance improvements of PG-Strom, and sticks to making fun technologies a reality. Also, we support design, operation, and improvement of customer's system through the relevant technologies.
