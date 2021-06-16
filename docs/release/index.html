@@ -96,10 +96,61 @@
 </nav>
 
 
+<h1 class="headline" id="20210616">
+PG-Strom v3.0をリリースしました。
+</h1>
+<p class="headline">
+2021年6月16日(水)
+</p>
+
+<p>本日、PG-Strom開発者チームは、NVIDIA GPUDirect Storage対応や、GPU版PostGIS・GiSTインデックスなど新機能を含むPG-Strom v3.0をリリースしました。</p>
+<p>主要な変更点は以下の通りです。</p>
+<ul>
+<li>NVIDIA GPUDirect Storage (cuFile) に対応しました。</li>
+<li>いくつかのPostGIS関数がGPUで実行可能となりました。</li>
+<li>GiSTインデックスを使用したGpuJoinに対応しました。</li>
+<li>新たにGPUキャッシュ機能が実装されました。</li>
+<li>ユーザ定義のGPUデータ型/関数/演算子に対応しました。(実験的)</li>
+<li>ソフトウェアライセンスをGPLv2からPostgreSQLライセンスへと切り替えました。</li>
+</ul>
+<h2 id="nvidia-gpudirect-storage">NVIDIA GPUDirect Storage対応</h2>
+<p>2018年4月にリリースしたv2.0以降、PG-StromではP2P-DMAを用いてCPUを介さずにNVME-SSDからGPUへデータをロードし、WHERE句/JOIN/GROUP BYといったSQL処理の一部をGPUで実行した後にホストシステムへとデータを戻す「GPUダイレクトSQL」という機能を有していました。</p>
+<p>この機能は専用のLinux kernelドライバを用いて実装されていましたが、PG-Strom v3.0では、NVIDIA社が6月16日にリリースしたCUDA Toolkitの新機能「GPUDirect Storage」にも対応しています。</p>
+<p><img alt="GPUDirect Storage Support" src="../img/press_20210616a.png" /></p>
+<p>専用ドライバではローカルのNVME-SSDからGPUへの直接データ読み出しに限られていましたが、GPUDirect Storageドライバを用いる事で、NVME-oF (NVME over Fabrics)デバイスやSDS(Software Defined Storage)デバイス、またそれらの上に構築された共有ファイルシステムからも、CPUをバイパスした直接のデータ読み出しが可能となります。</p>
+<p>これにより、PG-Stromのストレージ層の拡張性や設計の柔軟性が大幅に向上するほか、ログデータの保存・検索に有用なApache Arrow形式を用いてのデータ交換も従来以上に容易になります。</p>
+<h2 id="gpupostgisgist">GPU版PostGISとGiSTインデックス</h2>
+<p>PG-Strom v3.0ではいくつかのPostGIS関数にGPU版を実装し、WHERE句やJOIN結合条件でこれらを使用する事ができます。
+また、GpuJoinで点や多角形などのジオメトリ要素を用いた表結合を行う際には、GiSTインデックス（R木）を用いた高速な絞り込みが可能になりました。</p>
+<p>PostGISは地理情報分析の分野で広く用いられているPostgreSQL向け拡張モジュールです。
+なかでもGPU版PostGISは、携帯電話や自動車といった移動体デバイスの最新の位置情報（Real-time Location Data）と、市区町村や学区の境界といった領域（Area Definition Data）との間で行われる突合処理を主たるターゲットとしています。</p>
+<p><img alt="GPU PostGIS and GiST index" src="../img/press_20210616b.png" /></p>
+<p>これらの機能強化は、例えば一定のエリア内に存在する携帯電話に広告を配信したい時、例えば一定のエリア内に存在する自動車に渋滞情報を配信したい時など、位置をキーとして該当するデバイスを検索する処理に効果を発揮します。</p>
+<hr />
+<ul>
+<li>PG-Strom v3.0 リリースノート<ul>
+<li>http://heterodb.github.io/pg-strom/ja/release_v3.0/</li>
+</ul>
+</li>
+<li>PG-Strom プロジェクト GitHub<ul>
+<li>https://github.com/heterodb/pg-strom</li>
+</ul>
+</li>
+</ul>
+<p>HeteroDB株式会社は、PG-Stromのさらなる機能強化や性能改善をはじめとしたソフトウェアの改良にコミットし『オモシロ技術を形にする』事にこだわっていくと共に、GPUやPostgreSQL、Linuxといった関連技術を通じてお客様システムの設計、運用、改善をサポートして参ります。</p>
+<blockquote>
+<p><strong>本件に関するお問い合わせ先</strong></p>
+<ul>
+<li>ヘテロDB株式会社 </li>
+<li>メール: contact@heterodbcom </li>
+<li>電話: 03-6409-6445</li>
+<li>住所: 品川区北品川5-5-15 大崎ブライトコア4F</li>
+</ul>
+</blockquote>
+<hr />
 <h1 class="headline" id="20201127">
 事務所移転のお知らせ
 </h1>
-
 <p class="headline">
 2020年11月4日(水)
 </p>
@@ -116,7 +167,6 @@
 <h1 class="headline" id="20200915">
 PostgreSQL Conference Japan 2020のスポンサーになりました。
 </h1>
-
 <p class="headline">
 2020年9月15日(水)
 </p>
@@ -128,7 +178,6 @@ PostgreSQL Conference Japan 2020のスポンサーになりました。
 <h1 class="headline" id="20191030">
 PostgreSQL Conference Japan 2019のスポンサーになりました。
 </h1>
-
 <p class="headline">
 2019年10月30日(水)
 </p>
@@ -140,7 +189,6 @@ PostgreSQL Conference Japan 2019のスポンサーになりました。
 <h1 class="headline" id="20180418">
 ヘテロDB、GPUを用いたデータベース高速化技術PG-Stromの販売を開始
 </h1>
-
 <p class="headline">
 2018年04月18日(水)
 </p>
@@ -228,7 +276,6 @@ PostgreSQL Conference Japan 2019のスポンサーになりました。
 <p>以上</p>
 <hr />
 <!-- 日本語のみ -->
-
 <p>あらゆる産業のIT基盤であるデータベースにGPUを活用し、処理の高速化を実現したPG-Stromは、GPUの新たな活用領域を切り開いたと言えるでしょう。PG-Stromアプライアンス製品の販売開始によって、データベース上での超高速計算・解析が簡単に活用できるようになることを期待しています。</p>
 <p>エヌビディア 日本代表 兼 米国本社副社長　　大崎真孝様</p>
 <hr />
@@ -245,7 +292,6 @@ PostgreSQL Conference Japan 2019のスポンサーになりました。
 <h1 class="headline" id="20171213">
 GTCジャパン Inception Startup AIサミットにおいて、弊社が最優秀賞を受賞いたしました。
 </h1>
-
 <p class="headline">
 2017年12月13日(水)
 </p>
@@ -271,7 +317,6 @@ GTCジャパン Inception Startup AIサミットにおいて、弊社が最優�
 <h1 class="headline" id="20170929">
 HeteroDBがNVIDIA「Inception Program」に加入しました
 </h1>
-
 <p class="headline">
 2017年9月29日(金)
 </p>
@@ -297,7 +342,6 @@ HeteroDBがNVIDIA「Inception Program」に加入しました
 <h1 class="headline" id="20170728">
 IPA未踏アドバンスト事業において、弊社従業員の提案が採択されました。
 </h1>
-
 <p class="headline">
 2017年7月28日(金)
 </p>
@@ -334,7 +378,6 @@ IPA未踏アドバンスト事業において、弊社従業員の提案が採�
 〜 ヘテロジニアスコンピューティング技術のデータベース領域への適用に向けて〜
 </h2>
 </h1>
-
 <p class="headline">
 2017年7月4日(火)
 </p>
@@ -375,7 +418,6 @@ IPA未踏アドバンスト事業において、弊社従業員の提案が採�
 <h1 class="headline" id="20170508">
 弊社社員の研究発表がGTC2017のTop-5ポスターに選定されました
 </h1>
-
 <p class="headline">
 2017年5月8日(月)
 </p>

@@ -96,10 +96,61 @@
 </nav>
 
 
+<h1 class="headline" id="20210616">
+PG-Strom v3.0 was released
+</h1>
+<p class="headline">
+16-Jun-2021 (Wed)
+</p>
+
+<p>Today, PG-Strom Developers Team released PG-Strom v3.0 including new features; NVIDIA GPUDirect Storage support, GPU version of PostGIS, GiST index support and so on.</p>
+<p>Major changes in PG-Strom v3.0 are as follows:</p>
+<ul>
+<li>NVIDIA GPUDirect Storage (cuFile) is now supported.</li>
+<li>Several PostGIS functions are executable on GPUs.</li>
+<li>GpuJoin using GiST index is now supported.</li>
+<li>GPU Cache mechanism is newly implemented.</li>
+<li>User-defined GPU data types/functions/operators are experimentally supported.</li>
+<li>Software license was switched from GPLv2 to PostgreSQL license.</li>
+</ul>
+<h2 id="nvidia-gpudirect-storage-support">NVIDIA GPUDirect Storage Support</h2>
+<p>Since PG-Strom v2.0 released at Apr-2018, PG-Strom has supported "GPUDirect SQL" that loads data from NVME-SSD to GPU, bypassing CPU using P2P-DMA technology, and execute a part of SQL workloads like WHERE/JOIN/GROUP BY prior to the host system write back.</p>
+<p>This feature has been implemented using a dedicated Linux kernel driver. PG-Strom v3.0 also supports the GPUDirect Storage that is a new feature of CUDA Toolkit released at 16th-June by NVIDIA.</p>
+<p><img alt="GPUDirect Storage Support" src="../img/press_20210616a.png" /></p>
+<p>The dedicated driver has supported only local NVME-SSD as a source of direct data read towards GPU. The new GPUDirect Storage driver enables direct reads bypassing CPU from NVME-oF (NVME over Fabrics) devices, SDS (Software Defined Storage) devices, or shared filesystems built on them, in addition to the local drives.</p>
+<p>These enhancement expands the scalability and design flexibility of PG-Strom storage layer. It also makes data exchange easier using Apache Arrow files; usuful to store / search log data.</p>
+<h2 id="gpu-postgis-and-gist-index">GPU-PostGIS and GiST-index</h2>
+<p>PG-Strom v3.0 implemented several GPU version of PostGIS functions, and allows to use them in WHERE-clauses, JOIN-conditions and others.
+Also, when GpuJoin joins tables using geometry items like points or polygons, it enables fast search using GiST-index (R-tree).</p>
+<p>PostGIS is an extension module of PostgreSQL; widely used in the area of geolocation data analytics.
+Among them, the GPU version of PostGIS targets to check the real-time location data of mobile devices (like smartphones, vehicles, ...) against the area definition data like boundary of municipality or school districts.</p>
+<p><img alt="GPU PostGIS and GiST index" src="../img/press_20210616b.png" /></p>
+<p>For example, when you want to deliver an advertisement to smartphonws in a particular area, or when you want to deliver traffic jam information to cara in a particular area, it is effective in the process of searching for the corresponding device using the position as a key.</p>
+<hr />
+<ul>
+<li>PG-Strom v3.0 Release Note<ul>
+<li>http://heterodb.github.io/pg-strom/ja/release_v3.0/</li>
+</ul>
+</li>
+<li>PG-Strom Project GitHub<ul>
+<li>https://github.com/heterodb/pg-strom</li>
+</ul>
+</li>
+</ul>
+<p>HeteroDB Inc has been committed to the software improvements such as further enhancements and performance improvements of PG-Strom, and sticks to making fun technologies a reality. Also, we support design, operation, and improvement of customer's system through the relevant technologies.</p>
+<blockquote>
+<p><strong>Contact about this news</strong></p>
+<ul>
+<li>HeteroDB,Inc </li>
+<li>e-mail: contact@heterodbcom </li>
+<li>tel: +81(36409)6445</li>
+<li>location: 5-5-15, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan</li>
+</ul>
+</blockquote>
+<hr />
 <h1 class="headline" id="20201127">
 HeteroDB office was relocated
 </h1>
-
 <p class="headline">
 4-Nov-2020 (Wed)
 </p>
@@ -117,7 +168,6 @@ We look forward to your continued patronage.</p>
 <h1 class="headline" id="20200915">
 HeteroDB sponsored PostgreSQL Conference Japan 2020
 </h1>
-
 <p class="headline">
 15-Sep-2019 (Tue)
 </p>
@@ -129,7 +179,6 @@ HeteroDB sponsored PostgreSQL Conference Japan 2020
 <h1 class="headline" id="20191030">
 HeteroDB sponsored PostgreSQL Conference Japan 2019
 </h1>
-
 <p class="headline">
 30-Oct-2019 (Wed)
 </p>
@@ -141,7 +190,6 @@ HeteroDB sponsored PostgreSQL Conference Japan 2019
 <h1 class="headline" id="20180418">
 HeteroDB released PG-Strom products for GPU acceleration of database workloads
 </h1>
-
 <p class="headline">
 18-Apr-2018 (Wed)
 </p>
@@ -236,7 +284,6 @@ HeteroDB released PG-Strom products for GPU acceleration of database workloads
 <h1 class="headline" id="20171213">
 HeteroDB got the best startup award at GTCJapan, Inception Startup AI summit
 </h1>
-
 <p class="headline">
 13-Dec-2017 (Wed)
 </p>
@@ -258,7 +305,6 @@ HeteroDB got the best startup award at GTCJapan, Inception Startup AI summit
 <h1 class="headline" id="20170929">
 HeteroDB Joins NVIDIA Inception Startup Program
 </h1>
-
 <p class="headline">
 29-Sep-2017 (Fri)
 </p>
@@ -283,7 +329,6 @@ HeteroDB Joins NVIDIA Inception Startup Program
 <h1 class="headline" id="20170728">
 IPA adopted our engineer's proposition for the MITOH advanced program.
 </h1>
-
 <p class="headline">
 28-Jul-2017 (Fri)
 </p>
@@ -317,7 +362,6 @@ HeteroDB,Inc was established
 - For adoption of heterogeneous computing technology onto database area -
 </h2>
 </h1>
-
 <p class="headline">
 4-Jul-2017 (Tue)
 </p>
@@ -358,7 +402,6 @@ HeteroDB,Inc was established
 <h1 class="headline" id="20170508">
 Our research was chosen to the top-5 finalist of GTC2017 posters
 </h1>
-
 <p class="headline">
 8-May-2017 (Mon)
 </p>

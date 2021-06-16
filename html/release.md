@@ -2,6 +2,139 @@
 hide_toc: on
 ---
 
+<h1 class="headline" id="20210616">
+@ja:PG-Strom v3.0をリリースしました。
+@en:PG-Strom v3.0 was released
+</h1>
+<p class="headline">
+@ja:2021年6月16日(水)
+@en:16-Jun-2021 (Wed)
+</p>
+@ja{
+本日、PG-Strom開発者チームは、NVIDIA GPUDirect Storage対応や、GPU版PostGIS・GiSTインデックスなど新機能を含むPG-Strom v3.0をリリースしました。
+
+主要な変更点は以下の通りです。
+
+- NVIDIA GPUDirect Storage (cuFile) に対応しました。
+- いくつかのPostGIS関数がGPUで実行可能となりました。
+- GiSTインデックスを使用したGpuJoinに対応しました。
+- 新たにGPUキャッシュ機能が実装されました。
+- ユーザ定義のGPUデータ型/関数/演算子に対応しました。(実験的)
+- ソフトウェアライセンスをGPLv2からPostgreSQLライセンスへと切り替えました。
+}
+@en{
+Today, PG-Strom Developers Team released PG-Strom v3.0 including new features; NVIDIA GPUDirect Storage support, GPU version of PostGIS, GiST index support and so on.
+
+Major changes in PG-Strom v3.0 are as follows:
+
+- NVIDIA GPUDirect Storage (cuFile) is now supported.
+- Several PostGIS functions are executable on GPUs.
+- GpuJoin using GiST index is now supported.
+- GPU Cache mechanism is newly implemented.
+- User-defined GPU data types/functions/operators are experimentally supported.
+- Software license was switched from GPLv2 to PostgreSQL license.
+}
+
+@ja:##NVIDIA GPUDirect Storage対応
+@en:##NVIDIA GPUDirect Storage Support
+
+@ja{
+2018年4月にリリースしたv2.0以降、PG-StromではP2P-DMAを用いてCPUを介さずにNVME-SSDからGPUへデータをロードし、WHERE句/JOIN/GROUP BYといったSQL処理の一部をGPUで実行した後にホストシステムへとデータを戻す「GPUダイレクトSQL」という機能を有していました。
+
+この機能は専用のLinux kernelドライバを用いて実装されていましたが、PG-Strom v3.0では、NVIDIA社が6月16日にリリースしたCUDA Toolkitの新機能「GPUDirect Storage」にも対応しています。
+}
+@en{
+Since PG-Strom v2.0 released at Apr-2018, PG-Strom has supported "GPUDirect SQL" that loads data from NVME-SSD to GPU, bypassing CPU using P2P-DMA technology, and execute a part of SQL workloads like WHERE/JOIN/GROUP BY prior to the host system write back.
+
+This feature has been implemented using a dedicated Linux kernel driver. PG-Strom v3.0 also supports the GPUDirect Storage that is a new feature of CUDA Toolkit released at 16th-June by NVIDIA.
+}
+
+![GPUDirect Storage Support](img/press_20210616a.png)
+
+@ja{
+専用ドライバではローカルのNVME-SSDからGPUへの直接データ読み出しに限られていましたが、GPUDirect Storageドライバを用いる事で、NVME-oF (NVME over Fabrics)デバイスやSDS(Software Defined Storage)デバイス、またそれらの上に構築された共有ファイルシステムからも、CPUをバイパスした直接のデータ読み出しが可能となります。
+
+これにより、PG-Stromのストレージ層の拡張性や設計の柔軟性が大幅に向上するほか、ログデータの保存・検索に有用なApache Arrow形式を用いてのデータ交換も従来以上に容易になります。
+}
+@en{
+The dedicated driver has supported only local NVME-SSD as a source of direct data read towards GPU. The new GPUDirect Storage driver enables direct reads bypassing CPU from NVME-oF (NVME over Fabrics) devices, SDS (Software Defined Storage) devices, or shared filesystems built on them, in addition to the local drives.
+
+These enhancement expands the scalability and design flexibility of PG-Strom storage layer. It also makes data exchange easier using Apache Arrow files; usuful to store / search log data.
+}
+
+@ja:##GPU版PostGISとGiSTインデックス
+@en:##GPU-PostGIS and GiST-index
+
+@ja{
+PG-Strom v3.0ではいくつかのPostGIS関数にGPU版を実装し、WHERE句やJOIN結合条件でこれらを使用する事ができます。
+また、GpuJoinで点や多角形などのジオメトリ要素を用いた表結合を行う際には、GiSTインデックス（R木）を用いた高速な絞り込みが可能になりました。
+
+PostGISは地理情報分析の分野で広く用いられているPostgreSQL向け拡張モジュールです。
+なかでもGPU版PostGISは、携帯電話や自動車といった移動体デバイスの最新の位置情報（Real-time Location Data）と、市区町村や学区の境界といった領域（Area Definition Data）との間で行われる突合処理を主たるターゲットとしています。
+}
+@en{
+PG-Strom v3.0 implemented several GPU version of PostGIS functions, and allows to use them in WHERE-clauses, JOIN-conditions and others.
+Also, when GpuJoin joins tables using geometry items like points or polygons, it enables fast search using GiST-index (R-tree).
+
+PostGIS is an extension module of PostgreSQL; widely used in the area of geolocation data analytics.
+Among them, the GPU version of PostGIS targets to check the real-time location data of mobile devices (like smartphones, vehicles, ...) against the area definition data like boundary of municipality or school districts.
+}
+
+![GPU PostGIS and GiST index](img/press_20210616b.png)
+
+@ja{
+これらの機能強化は、例えば一定のエリア内に存在する携帯電話に広告を配信したい時、例えば一定のエリア内に存在する自動車に渋滞情報を配信したい時など、位置をキーとして該当するデバイスを検索する処理に効果を発揮します。
+}
+@en{
+For example, when you want to deliver an advertisement to smartphonws in a particular area, or when you want to deliver traffic jam information to cara in a particular area, it is effective in the process of searching for the corresponding device using the position as a key.
+}
+
+----
+
+@ja{
+- PG-Strom v3.0 リリースノート
+    - http://heterodb.github.io/pg-strom/ja/release_v3.0/
+- PG-Strom プロジェクト GitHub
+    - https://github.com/heterodb/pg-strom
+}
+@en{
+- PG-Strom v3.0 Release Note
+    - http://heterodb.github.io/pg-strom/ja/release_v3.0/
+- PG-Strom Project GitHub
+    - https://github.com/heterodb/pg-strom
+}
+
+@ja{
+HeteroDB株式会社は、PG-Stromのさらなる機能強化や性能改善をはじめとしたソフトウェアの改良にコミットし『オモシロ技術を形にする』事にこだわっていくと共に、GPUやPostgreSQL、Linuxといった関連技術を通じてお客様システムの設計、運用、改善をサポートして参ります。
+}
+@en{
+HeteroDB Inc has been committed to the software improvements such as further enhancements and performance improvements of PG-Strom, and sticks to making fun technologies a reality. Also, we support design, operation, and improvement of customer's system through the relevant technologies.
+}
+
+@ja{
+> **本件に関するお問い合わせ先**
+>
+> - ヘテロDB株式会社 
+> - メール: contact@heterodb.com 
+> - 電話: 03-6409-6445
+> - 住所: 品川区北品川5-5-15 大崎ブライトコア4F
+}
+@en{
+> **Contact about this news**
+> 
+> - HeteroDB,Inc 
+> - e-mail: contact@heterodb.com 
+> - tel: +81(36409)6445
+> - location: 5-5-15, Kita-Shinagawa, Shinagawa-ku, Tokyo, Japan
+}
+
+
+
+
+
+
+------
+
 <h1 class="headline" id="20201127">
 @ja:事務所移転のお知らせ
 @en:HeteroDB office was relocated
