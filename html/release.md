@@ -7,8 +7,8 @@ hide_toc: on
 @en:PG-Strom v3.0 was released
 </h1>
 <p class="headline">
-@ja:2021年6月16日(水)
-@en:16-Jun-2021 (Wed)
+@ja:2021年6月30日(火)
+@en:30-Jun-2021 (Tue)
 </p>
 @ja{
 本日、PG-Strom開発者チームは、NVIDIA GPUDirect Storage対応や、GPU版PostGIS・GiSTインデックスなど新機能を含むPG-Strom v3.0をリリースしました。
